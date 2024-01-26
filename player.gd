@@ -9,6 +9,8 @@ signal on_lost()
 var _hp = 3
 var _is_invincible = false
 
+@onready var screen_size = get_viewport_rect().size
+
 @onready var InvincibleTimer = $InvincibleTimer
 
 func _ready():
@@ -32,9 +34,12 @@ func _physics_process(delta):
 
 	move_and_slide()
 	
+	Globals.screen_wrap(self)
+	
 	if get_slide_collision_count() > 0 and not _is_invincible:
 		var collider = get_slide_collision(0)
 		_get_damage()
+
 
 func _get_damage():
 	_hp -= 1
