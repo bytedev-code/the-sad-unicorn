@@ -15,3 +15,7 @@ shape = SubResource("RectangleShape2D_3f083")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_0jk23")
+
+[node name="InvincibleTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
