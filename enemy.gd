@@ -1,3 +1,4 @@
+class_name Enemy
 extends RigidBody2D
 
 
@@ -16,3 +17,5 @@ func _ready():
 func _process(delta):
 	var motion = _direction * _speed * delta
 	move_and_collide(motion)
+	
+	Globals.screen_wrap(self)
