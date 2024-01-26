@@ -1,6 +1,11 @@
 extends CharacterBody2D
 
 const SPEED = 300.0
+@export var INIT_HP: int = 3
+var _hp = 3
+
+func _ready():
+	_hp = INIT_HP
 
 func _physics_process(delta):
 	
