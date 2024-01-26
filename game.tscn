@@ -11,5 +11,6 @@ position = Vector2(639, 339)
 [node name="enemies" type="Node2D" parent="."]
 
 [node name="dummy" parent="enemies" instance=ExtResource("2_q8o6g")]
+position = Vector2(310, 279)
 
 [node name="projectiles" type="Node2D" parent="."]

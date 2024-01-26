@@ -7,6 +7,7 @@
 size = Vector2(82, 92)
 
 [node name="player" type="CharacterBody2D"]
+motion_mode = 1
 script = ExtResource("1_ulpd7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -14,3 +15,7 @@ shape = SubResource("RectangleShape2D_3f083")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_0jk23")
+
+[node name="InvincibleTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
