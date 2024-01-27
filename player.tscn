@@ -1,20 +1,26 @@
-[gd_scene load_steps=3 format=3 uid="uid://yaolwrsv7rof"]
+[gd_scene load_steps=4 format=3 uid="uid://yaolwrsv7rof"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_ulpd7"]
-[ext_resource type="Texture2D" uid="uid://o6kvwr0exbfa" path="res://assets/enemies/walrus.png" id="2_sy02h"]
+[ext_resource type="Texture2D" uid="uid://c6ih7oetcwv4b" path="res://assets/enemies/walrus_1.png" id="2_xtfns"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aj5bb"]
+radius = 56.0
+height = 152.0
 
 [node name="player" type="CharacterBody2D"]
 motion_mode = 1
 script = ExtResource("1_ulpd7")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-rotation = -0.00511768
-polygon = PackedVector2Array(-53.378, 73.7278, 52.9942, 1.27122, 52.1375, -26.7335, 19.2966, -57.902, -55.7127, -56.2859)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 15)
+rotation = 3.14159
+shape = SubResource("CapsuleShape2D_aj5bb")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-rotation = 1.5708
-scale = Vector2(0.15, 0.15)
-texture = ExtResource("2_sy02h")
+position = Vector2(8, -5)
+rotation = 3.14159
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_xtfns")
 
 [node name="InvincibleTimer" type="Timer" parent="."]
 wait_time = 3.0

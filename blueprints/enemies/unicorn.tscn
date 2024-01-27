@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://c7pp2emx7mukt"]
+
+[ext_resource type="Script" path="res://boss.gd" id="1_t3y76"]
+[ext_resource type="Texture2D" uid="uid://b0hr1nsxp1gok" path="res://assets/enemies/unicorn_sad.png" id="2_ac4ov"]
+[ext_resource type="Texture2D" uid="uid://dmdnw8qysi41x" path="res://assets/enemies/unicorn_happy.png" id="2_knjnp"]
+[ext_resource type="PackedScene" uid="uid://dfkqlfy7e73lr" path="res://audio_player.tscn" id="3_sxjqp"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tyi1p"]
+radius = 99.8697
+height = 414.502
+
+[node name="unicorn" type="RigidBody2D"]
+script = ExtResource("1_t3y76")
+DEATH_TEXTURE = ExtResource("2_knjnp")
+ROTATE = false
+SPEED = 400.0
+SCORE = 100
+HITPOINTS = 2
+MOVETYPE = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(18, 4)
+rotation = 0.583312
+shape = SubResource("CapsuleShape2D_tyi1p")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_ac4ov")
+
+[node name="AudioPlayer" parent="." instance=ExtResource("3_sxjqp")]
+
+[connection signal="body_entered" from="." to="." method="_on_collide"]
