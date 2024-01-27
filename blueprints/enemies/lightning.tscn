@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://xwqq434lfr7w"]
+[gd_scene load_steps=5 format=3 uid="uid://xwqq434lfr7w"]
 
 [ext_resource type="Script" path="res://enemy.gd" id="1_tdysd"]
 [ext_resource type="Texture2D" uid="uid://hrpk3lxhwroq" path="res://assets/enemies/lightning.png" id="2_hssia"]
 [ext_resource type="PackedScene" path="res://audio_player.tscn" id="3_gwcrg"]
-[ext_resource type="AudioStream" uid="uid://d1q71hx4epq0n" path="res://assets/sounds/bell.mp3" id="4_btf8g"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_imy1x"]
 radius = 35.1175
@@ -24,6 +23,5 @@ scale = Vector2(0.15, 0.15)
 texture = ExtResource("2_hssia")
 
 [node name="AudioPlayer" parent="." instance=ExtResource("3_gwcrg")]
-stream1 = ExtResource("4_btf8g")
 
 [connection signal="body_entered" from="." to="." method="_on_collide"]
