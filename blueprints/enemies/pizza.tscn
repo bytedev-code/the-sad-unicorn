@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://bne1ywbb5xsci" path="res://blueprints/enemies/pizza_slice.tscn" id="2_a7ert"]
 [ext_resource type="Texture2D" uid="uid://lho6elehpi6e" path="res://assets/enemies/pizza.png" id="2_h78fa"]
 [ext_resource type="PackedScene" uid="uid://dfkqlfy7e73lr" path="res://audio_player.tscn" id="4_rqd7h"]
-[ext_resource type="AudioStream" uid="uid://d1q71hx4epq0n" path="res://assets/sounds/bell.mp3" id="5_oog2c"]
+[ext_resource type="AudioStream" uid="uid://ej5usdws68t" path="res://assets/sounds/blow1.mp3" id="5_6qfsv"]
 [ext_resource type="AudioStream" uid="uid://bgbsu4bnkax0r" path="res://assets/sounds/door1.mp3" id="6_sidmb"]
 [ext_resource type="AudioStream" uid="uid://dq4vgemqy7sri" path="res://assets/sounds/fart2.mp3" id="7_rb40v"]
 
@@ -24,7 +24,7 @@ scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_h78fa")
 
 [node name="AudioPlayer" parent="." instance=ExtResource("4_rqd7h")]
-death_stream1 = ExtResource("5_oog2c")
+death_stream1 = ExtResource("5_6qfsv")
 death_stream2 = ExtResource("6_sidmb")
 death_stream3 = ExtResource("7_rb40v")
 
