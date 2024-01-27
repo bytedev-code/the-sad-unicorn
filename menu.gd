@@ -20,7 +20,8 @@ func _process(delta):
 
 
 func _on_start_button_pressed():
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://game.tscn")
+#	pass # Replace with function body.
 
 
 

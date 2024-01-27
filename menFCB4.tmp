@@ -1,0 +1,149 @@
+[gd_scene load_steps=11 format=3 uid="uid://dvwm45vvvy6yi"]
+
+[ext_resource type="Script" path="res://menu.gd" id="1_0ks8r"]
+[ext_resource type="Theme" uid="uid://b2ommva15a5fy" path="res://menu.tres" id="1_2rghk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hrvpx"]
+bg_color = Color(0.6, 0.631373, 0.298039, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.92549, 0.72549, 0.898039, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+shadow_color = Color(0.129412, 0, 0, 0.6)
+shadow_size = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5uam5"]
+bg_color = Color(0.819608, 0.439216, 0.768627, 1)
+border_width_left = 10
+border_width_top = 10
+border_width_right = 10
+border_width_bottom = 10
+border_color = Color(0.403922, 0.901961, 0.784314, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_823n7"]
+bg_color = Color(0.788235, 0.537255, 0.305882, 1)
+
+[sub_resource type="InputEventKey" id="InputEventKey_8r4ga"]
+keycode = 1
+
+[sub_resource type="Shortcut" id="Shortcut_t7rju"]
+events = [SubResource("InputEventKey_8r4ga")]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j4g1c"]
+bg_color = Color(0.270588, 0.65098, 0.788235, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jyv2o"]
+bg_color = Color(0.596078, 0.607843, 0.552941, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_48u15"]
+bg_color = Color(0.635294, 0.576471, 0.662745, 1)
+
+[node name="Menu" type="Control"]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0ks8r")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 0
+offset_right = 1198.0
+offset_bottom = 774.0
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(1920, 540)
+layout_direction = 2
+layout_mode = 2
+alignment = 1
+
+[node name="Buttons" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(640, 0)
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="StartButton" type="Button" parent="VBoxContainer/HBoxContainer/Buttons" groups=["text"]]
+custom_minimum_size = Vector2(200, 120)
+layout_mode = 2
+theme = ExtResource("1_2rghk")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0.745098, 0.384314, 0.623529, 1)
+theme_override_colors/font_hover_color = Color(0.160784, 0.231373, 0.505882, 1)
+theme_override_colors/font_outline_color = Color(0.654902, 0.341176, 0.278431, 1)
+theme_override_styles/normal = SubResource("StyleBoxFlat_hrvpx")
+theme_override_styles/hover = SubResource("StyleBoxFlat_5uam5")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_823n7")
+shortcut = SubResource("Shortcut_t7rju")
+text = "Start"
+metadata/text = true
+
+[node name="HowToButton" type="Button" parent="VBoxContainer/HBoxContainer/Buttons" groups=["text"]]
+custom_minimum_size = Vector2(200, 120)
+layout_mode = 2
+theme = ExtResource("1_2rghk")
+theme_override_styles/normal = SubResource("StyleBoxFlat_j4g1c")
+text = "How to play"
+
+[node name="LanguageButton" type="OptionButton" parent="VBoxContainer/HBoxContainer/Buttons"]
+custom_minimum_size = Vector2(200, 120)
+layout_mode = 2
+theme = ExtResource("1_2rghk")
+theme_override_styles/normal = SubResource("StyleBoxFlat_j4g1c")
+button_pressed = true
+alignment = 1
+item_count = 2
+selected = 0
+popup/item_0/text = "English"
+popup/item_0/id = 0
+popup/item_0/disabled = true
+popup/item_1/text = "German"
+popup/item_1/id = 1
+
+[node name="HowToContainer" type="VBoxContainer" parent="."]
+visible = false
+top_level = true
+custom_minimum_size = Vector2(1280, 720)
+layout_mode = 0
+offset_left = 320.0
+offset_top = 180.0
+offset_right = 1600.0
+offset_bottom = 900.0
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="HowToTextLabel" type="RichTextLabel" parent="HowToContainer"]
+custom_minimum_size = Vector2(1280, 540)
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("1_2rghk")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 32
+theme_override_styles/focus = SubResource("StyleBoxFlat_jyv2o")
+theme_override_styles/normal = SubResource("StyleBoxFlat_48u15")
+text = "Bla bla"
+
+[node name="HowToCloseButton" type="Button" parent="HowToContainer"]
+custom_minimum_size = Vector2(640, 120)
+layout_mode = 2
+tooltip_text = "Close window"
+theme = ExtResource("1_2rghk")
+text = "Close"
+
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Buttons/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Buttons/HowToButton" to="." method="_on_how_to_button_pressed"]
+[connection signal="item_selected" from="VBoxContainer/HBoxContainer/Buttons/LanguageButton" to="." method="_on_language_button_item_selected"]
+[connection signal="pressed" from="HowToContainer/HowToCloseButton" to="." method="_on_how_to_close_button_pressed"]
