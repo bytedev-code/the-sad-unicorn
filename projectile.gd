@@ -2,7 +2,7 @@ class_name Projectile
 extends StaticBody2D
 
 
-@export var SPEED = 300.
+@export var SPEED = 500.
 var _direction = Vector2.ZERO
 
 # Called when the node enters the scene tree for the first time.
@@ -17,6 +17,11 @@ func setup(start_pos: Vector2, direction: Vector2):
 func _process(delta):
 	var motion = _direction * SPEED * delta
 	var collider = move_and_collide(motion)
+	
+	if collider:
+		#_on_lifetime_end()
+		#print(collider)
+		pass
 
 func _on_lifetime_end():
 	queue_free()

@@ -5,11 +5,14 @@
 
 [node name="pizza_slice" type="RigidBody2D"]
 script = ExtResource("1_q8gml")
+SCORE = 5
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(-0.5, 1.5)
-polygon = PackedVector2Array(-97.5, 99.5, -37.5, -102.5, 108.5, -27.5)
+polygon = PackedVector2Array(-97.5, 99.5, -39.5, -114.5, 121.5, -29.5)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_7n3m5")
+
+[connection signal="body_entered" from="." to="." method="_on_collide"]

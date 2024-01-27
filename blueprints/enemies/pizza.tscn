@@ -18,3 +18,5 @@ shape = SubResource("CircleShape2D_j8m40")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_h78fa")
+
+[connection signal="body_entered" from="." to="." method="_on_collide"]

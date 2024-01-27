@@ -14,7 +14,7 @@ grow_vertical = 2
 pivot_offset = Vector2(298, 336)
 script = ExtResource("1_whp6l")
 
-[node name="score" type="Label" parent="."]
+[node name="Score" type="Label" parent="."]
 layout_mode = 0
 offset_left = 15.0
 offset_top = 15.0
