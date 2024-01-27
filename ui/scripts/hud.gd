@@ -32,3 +32,20 @@ func death(enemy: String):
 func touchedEnemy(enemy: String):
 	$Achivements.touchedEnemy(enemy)
 	
+func _input(ev):
+	if Input.is_key_pressed(KEY_K):
+		addEnemyDeath("bannane")
+	elif  Input.is_key_pressed(KEY_T):
+		gameLost("default")
+	elif Input.is_key_pressed(KEY_O):
+		$Achivements.displayAchivment({
+		"name":"The Cake is a Lie",
+		"texture": preload("res://assets/enemies/cake.png"), 
+		"reference":["enemies","damageTaken","cake"], 
+		"goal":1, 
+		"reached": false
+		}
+		)
+	elif Input.is_key_pressed(KEY_R):
+		$Achivements.resetSave()
+		

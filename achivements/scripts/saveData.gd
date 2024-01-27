@@ -1,5 +1,6 @@
 class_name SaveData extends Object
 
+var achivements = preload("res://achivements/scripts/achivementsData.gd").new().achivements
 var data = {}
 var template = {
 	"enemies": {
@@ -26,29 +27,11 @@ var template = {
 		"bestscore":0,
 	}
 }
-var achivements = [{"name":"The Cake is a Lie", "reference":["goals","hitBy","cake"], "goal":1, "reached": false},
-					{"name": "Make the Unicorn Laugh","texture": preload("res://assets/enemies/banana.png"), "reference":["goals","completed", "normal"], "goal":1, "reached": false},
-					{"name": "It`s slippery", "reference":["enemies","banana"], "goal":10, "reached": false},
-					{"name": "Palim Palim", "reference":["enemies","fries"], "goal":1, "reached": false},
-					{"name": "It`s slippery", "reference":["enemies","banana"], "goal":10, "reached": false},
-					{"name": "Try harder next Time", "reference":["goals","los"], "goal":1, "reached": false},
-					{"name": "Shoot = Space!!", "reference":["goals","los"], "goal":10, "reached": false},
-					{"name": "Are you even trying???", "reference":["goals","los"], "goal":20, "reached": false}]
 
 func _init():
-	data = template;
-	#Todo 
-	#loadGame()
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+	loadGame()
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-	
 func saveGame():
 	var save_game = FileAccess.open("user://savegame.save", FileAccess.WRITE)
 	var json_data = JSON.stringify(data)
@@ -60,6 +43,8 @@ func resetGame():
 		dir.remove("user://savegame.save")
 	data = template
 	saveGame()
+	for achivement in achivements:
+		achivement["reached"] = false
 	
 	
 func loadGame():

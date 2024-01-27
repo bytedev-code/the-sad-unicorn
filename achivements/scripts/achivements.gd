@@ -1,9 +1,11 @@
-extends Control
+extends Control 
 
 var save:SaveData = SaveData.new()
 var achivementBanner = preload("res://achivements/achivementBanner.tscn")
 
-func gameWon(mode: String):
+func resetSave():
+	save.resetGame()
+func gameWon(mode: String)	:
 	if(save.data["game"]["completed"].has(mode)):
 		save.data["game"]["completed"][mode] += 1
 	else:
@@ -30,19 +32,19 @@ func death(enemy: String):
 	save.saveGame()
 	
 func touchedEnemy(enemy: String):
-	if(save.data["enemies"]["killed_by"].has(enemy)):
-		save.data["enemies"]["killed_by"][enemy] += 1
-	else:
-		save.data["enemies"]["killed_by"][enemy] = 1
-	checkforAchivement()
-	save.saveGame()
-	
-func enemyKilled(enemy:String):
 	if(save.data["enemies"]["damageTaken"].has(enemy)):
 		save.data["enemies"]["damageTaken"][enemy] += 1
 	else:
 		save.data["enemies"]["damageTaken"][enemy] = 1
-	save.data["enemies"]["damageTaken"]["total"] += 1
+	checkforAchivement()
+	save.saveGame()
+	
+func enemyKilled(enemy:String):
+	if(save.data["enemies"]["killed"].has(enemy)):
+		save.data["enemies"]["killed"][enemy] += 1
+	else:
+		save.data["enemies"]["killed"][enemy] = 1
+	save.data["enemies"]["killed"]["total"] += 1
 	checkforAchivement()
 	save.saveGame()
 	
@@ -62,7 +64,7 @@ func checkforAchivement():
 			if not value.has(key):
 				break
 			value = value[key]
-		if typeof(value) == TYPE_FLOAT and value >= achivement["goal"]:
+		if (typeof(value) == TYPE_FLOAT or typeof(value) == TYPE_INT) and not achivement["reached"] and value >= achivement["goal"]:
 			achivement["reached"] = true
 			displayAchivment(achivement)
 			
