@@ -12,6 +12,8 @@ func _ready():
 func setup(start_pos: Vector2, direction: Vector2):
 	position = start_pos
 	_direction = direction
+	
+	$Sprite2D.set_rotation(_direction.angle())
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

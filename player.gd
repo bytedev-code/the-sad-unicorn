@@ -2,6 +2,7 @@ class_name Player
 extends CharacterBody2D
 
 signal on_damage(hp: int)
+signal on_shoot()
 signal on_lost()
 
 @export var SPEED: float = 300.0
@@ -71,3 +72,4 @@ func _spawn_projectile():
 		projectile.setup(position + get_direction()*100, get_direction())
 		get_node(PROJECTILE_NODE).add_child(projectile)
 		ShootCooldown.start()
+		on_shoot.emit()
