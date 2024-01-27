@@ -28,6 +28,7 @@ func _on_start_button_pressed():
 
 
 func _on_how_to_button_pressed():
+	$HowToContainer/HowToTextLabel.text = "Ein Text"
 	$HowToContainer.visible = true
 #	pass # Replace with function body.
 

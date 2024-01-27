@@ -115,7 +115,7 @@ theme_override_colors/font_hover_color = Color(0.160784, 0.231373, 0.505882, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_hrvpx")
 theme_override_styles/hover = SubResource("StyleBoxFlat_5uam5")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_823n7")
-text = "Mode"
+text = "MOD"
 metadata/text = true
 
 [node name="AchieveButton" type="Button" parent="VBoxContainer/HBoxContainer/Buttons" groups=["text"]]
