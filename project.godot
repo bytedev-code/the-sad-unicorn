@@ -15,6 +15,16 @@ run/main_scene="res://game.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
 
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/size/resizable=false
+
+[internationalization]
+
+locale/translations=PackedStringArray("res://translations.de.translation", "res://translations.es.translation", "res://translations.en.translation")
+
 [physics]
 
 2d/default_gravity_vector=Vector2(0, 0)
