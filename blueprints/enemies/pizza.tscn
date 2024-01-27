@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://enemy.gd" id="1_ayt43"]
 [ext_resource type="PackedScene" uid="uid://bne1ywbb5xsci" path="res://blueprints/enemies/pizza_slice.tscn" id="2_a7ert"]
 [ext_resource type="Texture2D" uid="uid://lho6elehpi6e" path="res://assets/enemies/pizza.png" id="2_h78fa"]
-[ext_resource type="PackedScene" uid="uid://dfkqlfy7e73lr" path="res://audio_player.tscn" id="4_rqd7h"]
+[ext_resource type="PackedScene" path="res://audio_player.tscn" id="4_rqd7h"]
 [ext_resource type="AudioStream" uid="uid://d1q71hx4epq0n" path="res://assets/sounds/bell.mp3" id="5_oog2c"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_j8m40"]
