@@ -16,12 +16,13 @@ func setup(start_pos: Vector2, direction: Vector2):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	var motion = _direction * SPEED * delta
-	var collider = move_and_collide(motion)
+	var coll = move_and_collide(motion)
 	
-	if collider:
-		#_on_lifetime_end()
-		#print(collider)
-		pass
+	if coll:
+		var collider = coll.get_collider()
+		if collider is Enemy:
+			collider.deal_damage()
+			_on_lifetime_end()
 
 func _on_lifetime_end():
 	queue_free()

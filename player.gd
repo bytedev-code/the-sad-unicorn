@@ -10,6 +10,7 @@ signal on_lost()
 @export var PROJECTILE_NODE: NodePath = "."
 @export var PROJECTILE_BLUEPRINT: PackedScene = preload("res://blueprints/projectiles/haha.tscn")
 
+
 var _hp = 3
 var _is_invincible = false
 var _is_shoot_oncolldown = false
@@ -46,11 +47,12 @@ func _physics_process(delta):
 	Globals.screen_wrap(self)
 	
 	if get_slide_collision_count() > 0 and not _is_invincible:
-		var collider = get_slide_collision(0)
-		_get_damage()
+		var coll = get_slide_collision(0)
+		if coll.get_collider() is Enemy:
+			deal_damage()
 
 
-func _get_damage():
+func deal_damage():
 	_hp -= 1
 	_is_invincible = true
 	InvincibleTimer.start()

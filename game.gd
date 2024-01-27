@@ -1,6 +1,7 @@
 extends Node2D
 
 signal on_gamestart()
+signal on_gamelost()
 signal on_score_changed(score: int)
 
 @export var enemy_blueprints: Array[PackedScene] = []
@@ -35,3 +36,6 @@ func _on_enemy_split(blueprint: PackedScene, split_number: int, start_pos: Vecto
 func _on_enemy_death(score: int):
 	_score += score
 	on_score_changed.emit(_score)
+
+func _on_lost():
+	on_gamelost.emit()

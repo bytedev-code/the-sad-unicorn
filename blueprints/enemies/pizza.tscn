@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://lho6elehpi6e" path="res://assets/enemies/pizza.png" id="2_h78fa"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_j8m40"]
-radius = 116.51
+radius = 118.526
 
 [node name="pizza" type="RigidBody2D"]
 script = ExtResource("1_ayt43")
