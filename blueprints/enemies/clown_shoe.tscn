@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://daik3aj55p5k8"]
+
+[ext_resource type="Script" path="res://enemy.gd" id="1_fc5na"]
+[ext_resource type="Texture2D" uid="uid://cqve0sqg78ut4" path="res://assets/enemies/clown_shoe.png" id="2_ifev1"]
+[ext_resource type="PackedScene" path="res://audio_player.tscn" id="3_n6o2a"]
+[ext_resource type="AudioStream" uid="uid://d1q71hx4epq0n" path="res://assets/sounds/bell.mp3" id="4_vtm83"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0o66s"]
+radius = 48.1051
+height = 138.645
+
+[node name="clown_shoe" type="RigidBody2D"]
+script = ExtResource("1_fc5na")
+SPLIT_NUMBER = 6
+SCORE = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.999998, 2)
+rotation = 1.24303
+shape = SubResource("CapsuleShape2D_0o66s")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_ifev1")
+
+[node name="AudioPlayer" parent="." instance=ExtResource("3_n6o2a")]
+stream1 = ExtResource("4_vtm83")
+
+[connection signal="body_entered" from="." to="." method="_on_collide"]
