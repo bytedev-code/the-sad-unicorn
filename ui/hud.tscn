@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bvut3uk1ruoiu"]
+[gd_scene load_steps=5 format=3 uid="uid://bvut3uk1ruoiu"]
 
 [ext_resource type="Script" path="res://ui/scripts/Score.gd" id="1_5rm4a"]
 [ext_resource type="Script" path="res://ui/scripts/hud.gd" id="1_whp6l"]
 [ext_resource type="Script" path="res://ui/scripts/health.gd" id="2_hwx80"]
+[ext_resource type="PackedScene" uid="uid://be02gmhv7yv2g" path="res://achivements/achivementSystem.tscn" id="2_xabuk"]
 
 [node name="Hud" type="Control"]
 layout_mode = 3
@@ -13,6 +14,9 @@ grow_horizontal = 2
 grow_vertical = 2
 pivot_offset = Vector2(298, 336)
 script = ExtResource("1_whp6l")
+
+[node name="Achivements" parent="." instance=ExtResource("2_xabuk")]
+layout_mode = 1
 
 [node name="score" type="Label" parent="."]
 layout_mode = 0
