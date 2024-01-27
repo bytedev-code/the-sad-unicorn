@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://bkwl4fvfty4nq"]
+
+[ext_resource type="Script" path="res://enemy.gd" id="1_pvyua"]
+[ext_resource type="Texture2D" uid="uid://dhi4rtdbmtggy" path="res://assets/enemies/banana.png" id="2_467fq"]
+[ext_resource type="PackedScene" path="res://audio_player.tscn" id="4_yqvl4"]
+[ext_resource type="AudioStream" uid="uid://d1q71hx4epq0n" path="res://assets/sounds/bell.mp3" id="5_t10vm"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pm8kl"]
+radius = 44.6178
+height = 223.406
+
+[node name="banana" type="RigidBody2D"]
+script = ExtResource("1_pvyua")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(27, 6)
+rotation = 0.583312
+shape = SubResource("CapsuleShape2D_pm8kl")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_467fq")
+
+[node name="AudioPlayer" parent="." instance=ExtResource("4_yqvl4")]
+stream1 = ExtResource("5_t10vm")
+
+[connection signal="body_entered" from="." to="." method="_on_collide"]
