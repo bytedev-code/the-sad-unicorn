@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://bn04dsdp1jpme"]
+[gd_scene load_steps=5 format=3 uid="uid://bn04dsdp1jpme"]
 
 [ext_resource type="Script" path="res://game.gd" id="1_i82ie"]
 [ext_resource type="PackedScene" uid="uid://yaolwrsv7rof" path="res://player.tscn" id="1_uqs0x"]
 [ext_resource type="PackedScene" uid="uid://bjcdoe0d0l8r4" path="res://blueprints/dummy.tscn" id="2_q8o6g"]
+[ext_resource type="PackedScene" uid="uid://bvut3uk1ruoiu" path="res://ui/hud.tscn" id="4_a746c"]
 
 [node name="game" type="Node2D"]
 script = ExtResource("1_i82ie")
@@ -18,3 +19,7 @@ position = Vector2(639, 339)
 position = Vector2(310, 279)
 
 [node name="projectiles" type="Node2D" parent="."]
+
+[node name="Hud" parent="." instance=ExtResource("4_a746c")]
+
+[connection signal="on_damage" from="player" to="Hud" method="setHealth"]

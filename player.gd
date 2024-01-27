@@ -46,6 +46,7 @@ func _get_damage():
 	_is_invincible = true
 	InvincibleTimer.start()
 	
+	print("On damage")
 	on_damage.emit(_hp)
 	
 	if _hp <= 0:

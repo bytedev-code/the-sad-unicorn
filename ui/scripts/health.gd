@@ -15,6 +15,7 @@ func _process(delta):
 	pass
 	
 func createHealth():
+	print("CREATE ")
 	for i in maxHealth:
 		var child = TextureRect.new()
 		child.texture = heart
