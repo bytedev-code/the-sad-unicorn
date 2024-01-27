@@ -7,6 +7,8 @@ signal on_collide()
 signal on_hit()
 signal on_shoot()
 
+enum MoveType {RANDOM, HORIZONTAL}
+
 @export var ROTATE: bool = true
 @export var SPEED: float = 100.
 @export var SPLIT_INTO: PackedScene = null
@@ -14,6 +16,8 @@ signal on_shoot()
 @export var SCORE: int = 10
 @export var IGNORE_PLAYER_HIT: bool = false
 @export var HITPOINTS: int = 5
+@export var ENEMY_PROJECTILE: PackedScene = null
+@export var MOVETYPE: MoveType = MoveType.RANDOM
 
 var _direction = Vector2(0, 0)
 var _rot_speed = 0.1
@@ -23,9 +27,15 @@ var rng = RandomNumberGenerator.new()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	_direction = Vector2.from_angle(rng.randf() * 2 * PI)
+	
+	if MOVETYPE == MoveType.RANDOM:
+		_direction = Vector2.from_angle(rng.randf() * 2 * PI)
+	else:
+		_direction = Vector2(1, 0)
+
 	_rot_speed = rng.randf_range(-0.1, 0.1)
 	_hp = HITPOINTS
+	
 	set_contact_monitor(true)
 	set_max_contacts_reported(1)
 

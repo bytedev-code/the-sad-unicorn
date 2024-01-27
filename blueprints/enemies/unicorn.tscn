@@ -1,16 +1,23 @@
-[gd_scene load_steps=6 format=3 uid="uid://714o6wh7d1tg"]
+[gd_scene load_steps=7 format=3 uid="uid://c7pp2emx7mukt"]
 
-[ext_resource type="Script" path="res://enemy.gd" id="1_bd3jv"]
-[ext_resource type="Texture2D" uid="uid://c0va7q6puauop" path="res://assets/enemies/unicorn_1.png" id="2_qp1k8"]
-[ext_resource type="PackedScene" path="res://audio_player.tscn" id="3_sxjqp"]
+[ext_resource type="Script" path="res://boss.gd" id="1_t3y76"]
+[ext_resource type="Texture2D" uid="uid://b0hr1nsxp1gok" path="res://assets/enemies/unicorn_sad.png" id="2_ac4ov"]
+[ext_resource type="Texture2D" uid="uid://dmdnw8qysi41x" path="res://assets/enemies/unicorn_happy.png" id="2_knjnp"]
+[ext_resource type="PackedScene" uid="uid://dfkqlfy7e73lr" path="res://audio_player.tscn" id="3_sxjqp"]
 [ext_resource type="AudioStream" uid="uid://d1q71hx4epq0n" path="res://assets/sounds/bell.mp3" id="4_4oly1"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tyi1p"]
-radius = 58.3368
-height = 207.484
+radius = 99.8697
+height = 414.502
 
 [node name="unicorn" type="RigidBody2D"]
-script = ExtResource("1_bd3jv")
+script = ExtResource("1_t3y76")
+DEATH_TEXTURE = ExtResource("2_knjnp")
+ROTATE = false
+SPEED = 400.0
+SCORE = 100
+HITPOINTS = 2
+MOVETYPE = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(18, 4)
@@ -18,8 +25,8 @@ rotation = 0.583312
 shape = SubResource("CapsuleShape2D_tyi1p")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("2_qp1k8")
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_ac4ov")
 
 [node name="AudioPlayer" parent="." instance=ExtResource("3_sxjqp")]
 stream1 = ExtResource("4_4oly1")

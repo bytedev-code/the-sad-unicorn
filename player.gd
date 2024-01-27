@@ -5,12 +5,14 @@ signal on_damage(hp: int)
 signal on_shoot()
 signal on_lost()
 
-@export var SPEED: float = 300.0
+@export var SPEED: float = 30.0
 @export var INIT_HP: int = 3
 
 @export var PROJECTILE_NODE: NodePath = "."
 @export var PROJECTILE_BLUEPRINT: PackedScene = preload("res://blueprints/projectiles/haha.tscn")
 
+var _impulse = Vector2.ZERO
+var _apply_impulse = false
 
 var _hp = 3
 var _is_invincible = false
@@ -50,14 +52,22 @@ func _physics_process(delta):
 	
 	velocity *= 0.99
 
-	if Input.is_action_pressed("player_forward"):
-		velocity = get_direction() * SPEED
-	if Input.is_action_pressed("player_rotate_left"):
-		rotate(-0.1)
-	if Input.is_action_pressed("player_rotate_right"):
-		rotate(0.1)
+	if not _apply_impulse:
+		if Input.is_action_pressed("player_forward"):
+			velocity += get_direction() * SPEED
+		if Input.is_action_pressed("player_rotate_left"):
+			rotate(-0.1)
+		if Input.is_action_pressed("player_rotate_right"):
+			rotate(0.1)
+			
 	if Input.is_action_pressed("player_shoot"):
 		_spawn_projectile()
+
+	if _apply_impulse:
+		print(velocity)
+		velocity = _impulse * SPEED * 10
+		print(velocity)
+		_apply_impulse = false
 
 	move_and_slide()
 	
@@ -67,7 +77,14 @@ func _physics_process(delta):
 		var coll = get_slide_collision(0)
 		if coll.get_collider() is Enemy:
 			deal_damage()
+		if coll.get_collider() is Boss:
+			add_impulse(get_direction() * -5)
+			
 
+func add_impulse(impulse: Vector2):
+	print("IMPULSE")
+	_impulse = impulse
+	_apply_impulse = true
 
 func deal_damage():
 	_hp -= 1
