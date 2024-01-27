@@ -14,3 +14,7 @@ func _process(delta):
 func addScore(score:int):
 	self.score += score
 	text = str(score)
+	
+func setScore(score:int):
+	self.score = score
+	text = str(score)
