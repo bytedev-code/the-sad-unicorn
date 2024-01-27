@@ -21,6 +21,3 @@ PROJECTILE_NODE = NodePath("../projectiles")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Hud" parent="CanvasLayer" instance=ExtResource("4_a746c")]
-
-[connection signal="on_score_changed" from="." to="CanvasLayer/Hud" method="setScore"]
-[connection signal="on_damage" from="player" to="CanvasLayer/Hud" method="setHealth"]
