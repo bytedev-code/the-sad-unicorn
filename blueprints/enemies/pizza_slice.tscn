@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://bne1ywbb5xsci"]
+
+[ext_resource type="Script" path="res://enemy.gd" id="1_q8gml"]
+[ext_resource type="Texture2D" uid="uid://x3iadklsevne" path="res://assets/enemies/pizza_slice.png" id="2_7n3m5"]
+
+[node name="pizza_slice" type="RigidBody2D"]
+script = ExtResource("1_q8gml")
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-0.5, 1.5)
+polygon = PackedVector2Array(-97.5, 99.5, -37.5, -102.5, 108.5, -27.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_7n3m5")

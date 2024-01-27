@@ -3,6 +3,7 @@ extends RigidBody2D
 
 @export var ROTATE: bool = true
 @export var SPEED: float = 100.
+@export var SPLIT_INTO: PackedScene = null
 
 var _direction = Vector2(0, 0)
 var _rot_speed = 0.1
