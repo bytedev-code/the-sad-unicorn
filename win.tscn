@@ -1,0 +1,174 @@
+[gd_scene load_steps=7 format=3 uid="uid://drurrkbbg6e10"]
+
+[ext_resource type="Script" path="res://win.gd" id="1_ojjr4"]
+[ext_resource type="Texture2D" uid="uid://dlv0l7s5upemc" path="res://assets/images/background_2.png" id="2_mc4tu"]
+[ext_resource type="Texture2D" uid="uid://dmdnw8qysi41x" path="res://assets/enemies/unicorn_happy.png" id="3_gyke1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o7xrk"]
+bg_color = Color(0.992157, 0.313726, 0.505882, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7fson"]
+bg_color = Color(0.6, 0.937255, 0.360784, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_csw8a"]
+bg_color = Color(1, 0.272255, 0.22864, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+
+[node name="win" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ojjr4")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_mc4tu")
+expand_mode = 1
+
+[node name="Unicorn1" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -240.0
+offset_right = 500.0
+offset_bottom = 240.0
+grow_vertical = 2
+rotation = 0.261799
+pivot_offset = Vector2(250, 240)
+texture = ExtResource("3_gyke1")
+expand_mode = 1
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -288.0
+offset_top = -152.0
+offset_right = 286.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 0.366073, 0.50939, 1)
+theme_override_font_sizes/font_size = 100
+text = "YOU LAUGH!"
+
+[node name="Button" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -272.0
+offset_top = 112.0
+offset_right = -35.0
+offset_bottom = 187.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_o7xrk")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7fson")
+text = "Try Again!"
+
+[node name="Button2" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = 224.0
+offset_right = 117.0
+offset_bottom = 299.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_o7xrk")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7fson")
+text = "Endless?"
+
+[node name="Button3" type="Button" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 32.0
+offset_top = 112.0
+offset_right = 269.0
+offset_bottom = 187.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxFlat_o7xrk")
+theme_override_styles/hover = SubResource("StyleBoxFlat_csw8a")
+text = "Menu"
+
+[node name="Unicorn2" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -240.0
+offset_bottom = 240.0
+grow_horizontal = 0
+grow_vertical = 2
+rotation = -0.261799
+pivot_offset = Vector2(250, 240)
+texture = ExtResource("3_gyke1")
+expand_mode = 1
+flip_h = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.6
+autostart = true
+
+[connection signal="button_down" from="Control/Button" to="." method="_on_tryAgain"]
+[connection signal="mouse_entered" from="Control/Button2" to="." method="_enter_endless"]
+[connection signal="mouse_exited" from="Control/Button2" to="." method="_exit_endless"]
+[connection signal="button_down" from="Control/Button3" to="." method="_on_menu"]
+[connection signal="mouse_entered" from="Control/Button3" to="." method="_enter_Menu"]
+[connection signal="mouse_exited" from="Control/Button3" to="." method="_exit_Menu"]
+[connection signal="timeout" from="Timer" to="." method="_toggle_rotation"]
