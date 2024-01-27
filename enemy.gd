@@ -1,4 +1,4 @@
-class_name Enemy
+class_name Enemy 
 extends RigidBody2D
 
 signal on_split(blueprint: PackedScene, number: int, position: Vector2)
