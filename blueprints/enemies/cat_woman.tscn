@@ -1,10 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://dyo32b0ios53i"]
+[gd_scene load_steps=6 format=3 uid="uid://dyo32b0ios53i"]
 
 [ext_resource type="Script" path="res://enemy.gd" id="1_47w8w"]
 [ext_resource type="PackedScene" uid="uid://dcp2buq6hvuik" path="res://blueprints/enemies/cat.tscn" id="2_we7ij"]
-[ext_resource type="Texture2D" uid="uid://dobwrcxptdcf4" path="res://assets/enemies/cat_woman.png" id="3_j24jy"]
+[ext_resource type="Texture2D" uid="uid://dh444grr1844m" path="res://assets/enemies/cat_woman.png" id="3_j24jy"]
 [ext_resource type="PackedScene" path="res://audio_player.tscn" id="4_kftta"]
-[ext_resource type="AudioStream" uid="uid://d1q71hx4epq0n" path="res://assets/sounds/bell.mp3" id="5_216dc"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vedpw"]
 radius = 55.5
@@ -25,6 +24,5 @@ scale = Vector2(0.25, 0.25)
 texture = ExtResource("3_j24jy")
 
 [node name="AudioPlayer" parent="." instance=ExtResource("4_kftta")]
-stream1 = ExtResource("5_216dc")
 
 [connection signal="body_entered" from="." to="." method="_on_collide"]

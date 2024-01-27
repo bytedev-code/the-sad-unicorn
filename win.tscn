@@ -105,9 +105,10 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 48
 theme_override_styles/normal = SubResource("StyleBoxFlat_o7xrk")
 theme_override_styles/hover = SubResource("StyleBoxFlat_7fson")
-text = "Try Again!"
+text = "Again!!!"
 
 [node name="Button2" type="Button" parent="Control"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

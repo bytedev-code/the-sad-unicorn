@@ -1,9 +1,9 @@
 class_name Player
 extends CharacterBody2D
 
-signal on_damage(hp: int)
+signal on_damage(hp: int, enemy: String)
 signal on_shoot()
-signal on_lost()
+signal on_lost(enemy: String)
 
 @export var SPEED: float = 30.0
 @export var INIT_HP: int = 3
@@ -76,7 +76,7 @@ func _physics_process(delta):
 	if get_slide_collision_count() > 0 and not _is_invincible:
 		var coll = get_slide_collision(0)
 		if coll.get_collider() is Enemy:
-			deal_damage()
+			deal_damage(coll.get_collider())
 		if coll.get_collider() is Boss:
 			add_impulse(get_direction() * -5)
 			
@@ -86,15 +86,15 @@ func add_impulse(impulse: Vector2):
 	_impulse = impulse
 	_apply_impulse = true
 
-func deal_damage():
+func deal_damage(enemy):
 	_hp -= 1
 	_is_invincible = true
 	InvincibleTimer.start()
 	
-	on_damage.emit(_hp)
+	on_damage.emit(_hp, enemy.name)
 	
 	if _hp <= 0:
-		on_lost.emit()
+		on_lost.emit(enemy.name)
 		
 func _on_invincible_gone():
 	_is_invincible = false

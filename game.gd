@@ -3,7 +3,7 @@ extends Node2D
 signal on_gamestart(mode: String)
 signal on_gamelost(mode: String)
 signal on_gamewon(mode: String)
-signal on_score_changed(score: int)
+signal on_score_changed(score: int, enemy:String)
 
 @export var enemy_blueprints: Array[PackedScene] = []
 @export var unicorn_blueprint: PackedScene = null
@@ -13,6 +13,7 @@ signal on_score_changed(score: int)
 var rng = RandomNumberGenerator.new()
 var _score = 0
 var _unicorn_spawned = false
+var mode = "default"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -55,11 +56,13 @@ func _on_enemy_split(blueprint: PackedScene, split_number: int, start_pos: Vecto
 		split_enemy.setup(start_pos)
 		_add_enemy(split_enemy)
 
-func _on_enemy_death(score: int):
+func _on_enemy_death(score: int, name:String):
 	_score += score
-	on_score_changed.emit(_score)
+	on_score_changed.emit(_score, name)
 	if _score > BOSS_SCORE_THRESHOLD and not _unicorn_spawned:
 		_spawn_unicorn()
+	if name == unicorn_blueprint._bundled["names"][0]:
+		on_gamewon.emit(mode)
 
-func _on_lost():
-	on_gamelost.emit("default")
+func _on_lost(enemy:String):
+	on_gamelost.emit(mode)

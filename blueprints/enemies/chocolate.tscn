@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cdq72aw58l7da"]
+[gd_scene load_steps=5 format=3 uid="uid://cdq72aw58l7da"]
 
 [ext_resource type="Script" path="res://enemy.gd" id="1_ku8ro"]
 [ext_resource type="Texture2D" uid="uid://dk870giee54eu" path="res://assets/enemies/chocolate_bar.png" id="2_0e3sa"]
 [ext_resource type="PackedScene" path="res://audio_player.tscn" id="3_kp2ba"]
-[ext_resource type="AudioStream" uid="uid://d1q71hx4epq0n" path="res://assets/sounds/bell.mp3" id="4_ovjgl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_chy0a"]
 size = Vector2(138.2, 104.799)
@@ -16,7 +15,6 @@ SCORE = 5
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(3.5, 5.5)
 rotation = 2.38759
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_chy0a")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -24,6 +22,5 @@ scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_0e3sa")
 
 [node name="AudioPlayer" parent="." instance=ExtResource("3_kp2ba")]
-stream1 = ExtResource("4_ovjgl")
 
 [connection signal="body_entered" from="." to="." method="_on_collide"]

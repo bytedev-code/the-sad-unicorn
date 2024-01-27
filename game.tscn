@@ -48,5 +48,7 @@ autoplay = true
 
 [connection signal="on_gamelost" from="." to="CanvasLayer/Hud" method="gameLost"]
 [connection signal="on_gamewon" from="." to="CanvasLayer/Hud" method="gameWon"]
-[connection signal="on_score_changed" from="." to="CanvasLayer/Hud" method="setScore"]
-[connection signal="on_damage" from="player" to="CanvasLayer/Hud" method="setHealth"]
+[connection signal="on_score_changed" from="." to="CanvasLayer/Hud" method="enemyDeath"]
+[connection signal="on_damage" from="player" to="CanvasLayer/Hud" method="damageTaken"]
+[connection signal="on_lost" from="player" to="." method="_on_lost"]
+[connection signal="on_lost" from="player" to="CanvasLayer/Hud" method="death"]

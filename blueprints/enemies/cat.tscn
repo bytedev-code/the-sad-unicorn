@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dcp2buq6hvuik"]
+[gd_scene load_steps=5 format=3 uid="uid://dcp2buq6hvuik"]
 
 [ext_resource type="Script" path="res://enemy.gd" id="1_y7b4d"]
-[ext_resource type="Texture2D" uid="uid://pfno3yos7mx3" path="res://assets/enemies/slepping_cat.png" id="2_wl8y1"]
+[ext_resource type="Texture2D" uid="uid://ev0wgd63vf06" path="res://assets/enemies/slepping_cat.png" id="2_wl8y1"]
 [ext_resource type="PackedScene" path="res://audio_player.tscn" id="4_8wbhj"]
-[ext_resource type="AudioStream" uid="uid://d1q71hx4epq0n" path="res://assets/sounds/bell.mp3" id="5_hyaby"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qgc2e"]
 radius = 46.415
@@ -24,6 +23,5 @@ scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_wl8y1")
 
 [node name="AudioPlayer" parent="." instance=ExtResource("4_8wbhj")]
-stream1 = ExtResource("5_hyaby")
 
 [connection signal="body_entered" from="." to="." method="_on_collide"]

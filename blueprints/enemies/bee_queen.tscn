@@ -1,10 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bbrec76wuqjut"]
+[gd_scene load_steps=6 format=3 uid="uid://bbrec76wuqjut"]
 
 [ext_resource type="Script" path="res://enemy.gd" id="1_e2ucn"]
 [ext_resource type="PackedScene" uid="uid://c67uguh53333i" path="res://blueprints/enemies/honey.tscn" id="2_ah7fu"]
-[ext_resource type="Texture2D" uid="uid://c28w7lv3ml6dc" path="res://assets/enemies/bee_queen.png" id="3_ejsan"]
+[ext_resource type="Texture2D" uid="uid://beax6bqsqx4ow" path="res://assets/enemies/bee_queen.png" id="3_ejsan"]
 [ext_resource type="PackedScene" path="res://audio_player.tscn" id="4_w4mdp"]
-[ext_resource type="AudioStream" uid="uid://d1q71hx4epq0n" path="res://assets/sounds/bell.mp3" id="5_bursb"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pm8kl"]
 radius = 19.5
@@ -26,6 +25,5 @@ scale = Vector2(0.2, 0.2)
 texture = ExtResource("3_ejsan")
 
 [node name="AudioPlayer" parent="." instance=ExtResource("4_w4mdp")]
-stream1 = ExtResource("5_bursb")
 
 [connection signal="body_entered" from="." to="." method="_on_collide"]
