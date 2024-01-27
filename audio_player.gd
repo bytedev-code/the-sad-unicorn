@@ -35,10 +35,12 @@ func _ready() -> void:
 	randomize()
 
 func _on_death(_score) -> void:
-	enemy_audio_stream_player.stream = death_streams[randi() % death_streams.size()]
-	enemy_audio_stream_player.play()
+	if death_streams.size() > 0:
+		enemy_audio_stream_player.stream = death_streams[randi() % death_streams.size()]
+		enemy_audio_stream_player.play()
 	
 func _on_shoot() -> void:
-	enemy_audio_stream_player.stream =  shoot_streams[randi() % shoot_streams.size()]
-	enemy_audio_stream_player.play()
+	if shoot_streams.size() > 0:
+		enemy_audio_stream_player.stream =  shoot_streams[randi() % shoot_streams.size()]
+		enemy_audio_stream_player.play()
 
