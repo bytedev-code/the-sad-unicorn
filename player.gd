@@ -21,6 +21,8 @@ var _is_shoot_oncolldown = false
 @onready var InvincibleTimer = $InvincibleTimer
 @onready var ShootCooldown: Timer = $ShootCooldown
 
+var _blink_rising = false
+
 func _ready():
 	_hp = INIT_HP
 	_is_invincible = true
@@ -29,6 +31,20 @@ func _ready():
 	
 func get_direction() -> Vector2:
 	return -Vector2(0, 1).rotated(get_transform().get_rotation())
+
+func _process(delta):
+	if _is_invincible:
+		if _blink_rising:
+			$Sprite2D.modulate.a += 0.05
+		else:
+			$Sprite2D.modulate.a -= 0.05
+			
+		if $Sprite2D.modulate.a < 0.5:
+			_blink_rising = true
+		if $Sprite2D.modulate.a > 0.9:
+			_blink_rising = false
+	else:
+		$Sprite2D.modulate.a = 1.0
 
 func _physics_process(delta):
 	
