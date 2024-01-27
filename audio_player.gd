@@ -1,9 +1,9 @@
 extends Node2D
 class_name AudioPlayer
 
-@export var stream1 := AudioStream
-@export var stream2 := AudioStream
-@export var stream3 := AudioStream
+@export var death_stream1 := AudioStream
+@export var death_stream2 := AudioStream
+@export var death_stream3 := AudioStream
 
 var game : Node
 
