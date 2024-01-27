@@ -19,3 +19,7 @@ texture = ExtResource("2_0jk23")
 [node name="InvincibleTimer" type="Timer" parent="."]
 wait_time = 3.0
 one_shot = true
+
+[node name="ShootCooldown" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
