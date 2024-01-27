@@ -1,10 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://dirmfbrgs5jhn"]
+[gd_scene load_steps=9 format=3 uid="uid://dirmfbrgs5jhn"]
 
 [ext_resource type="Script" path="res://enemy.gd" id="1_ayt43"]
 [ext_resource type="PackedScene" uid="uid://bne1ywbb5xsci" path="res://blueprints/enemies/pizza_slice.tscn" id="2_a7ert"]
 [ext_resource type="Texture2D" uid="uid://lho6elehpi6e" path="res://assets/enemies/pizza.png" id="2_h78fa"]
 [ext_resource type="PackedScene" uid="uid://dfkqlfy7e73lr" path="res://audio_player.tscn" id="4_rqd7h"]
 [ext_resource type="AudioStream" uid="uid://d1q71hx4epq0n" path="res://assets/sounds/bell.mp3" id="5_oog2c"]
+[ext_resource type="AudioStream" uid="uid://bgbsu4bnkax0r" path="res://assets/sounds/door1.mp3" id="6_sidmb"]
+[ext_resource type="AudioStream" uid="uid://dq4vgemqy7sri" path="res://assets/sounds/fart2.mp3" id="7_rb40v"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_j8m40"]
 radius = 118.526
@@ -22,6 +24,8 @@ scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_h78fa")
 
 [node name="AudioPlayer" parent="." instance=ExtResource("4_rqd7h")]
-death_stream = ExtResource("5_oog2c")
+death_stream1 = ExtResource("5_oog2c")
+death_stream2 = ExtResource("6_sidmb")
+death_stream3 = ExtResource("7_rb40v")
 
 [connection signal="body_entered" from="." to="." method="_on_collide"]
