@@ -30,3 +30,4 @@ PROJECTILE_NODE = NodePath("../projectiles")
 
 [connection signal="on_score_changed" from="." to="CanvasLayer/Hud" method="setScore"]
 [connection signal="on_damage" from="player" to="CanvasLayer/Hud" method="setHealth"]
+[node name="EnemyAudioStreamPlayer" type="AudioStreamPlayer" parent="." groups=["enemy_audio_stream_player"]]

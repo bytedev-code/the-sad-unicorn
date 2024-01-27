@@ -22,6 +22,6 @@ scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_h78fa")
 
 [node name="AudioPlayer" parent="." instance=ExtResource("4_rqd7h")]
-stream1 = ExtResource("5_oog2c")
+death_stream = ExtResource("5_oog2c")
 
 [connection signal="body_entered" from="." to="." method="_on_collide"]
