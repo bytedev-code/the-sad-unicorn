@@ -83,6 +83,8 @@ text = "Volume"
 [node name="HSlider" type="HSlider" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_styles/slider = SubResource("StyleBoxFlat_fl7id")
+max_value = 50.0
 value = 50.0
 
 [connection signal="button_down" from="Back_btn" to="." method="_on_back_btn_button_down"]
+[connection signal="value_changed" from="VBoxContainer/HSlider" to="." method="_on_h_slider_value_changed"]

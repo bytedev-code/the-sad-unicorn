@@ -2,6 +2,9 @@ class_name SaveData extends Object
 
 var achivements = preload("res://achivements/scripts/achivementsData.gd").new().achivements
 var data = {}
+var settings = {
+	"volume":50
+}
 var template = {
 	"enemies": {
 		"killed": {
@@ -33,14 +36,15 @@ var template = {
 }
 
 func _init():
-	#resetGame()
 	loadGame()
 
 
 func saveGame():
 	var save_game = FileAccess.open("user://savegame.save", FileAccess.WRITE)
 	var json_data = JSON.stringify(data)
+	var json_settings_data = JSON.stringify(settings)
 	save_game.store_line(json_data)
+	save_game.store_line(json_settings_data)
 	
 func resetGame():
 	var dir = DirAccess.open("user://")
@@ -57,6 +61,7 @@ func loadGame():
 		return
 	var save_game = FileAccess.open("user://savegame.save", FileAccess.READ)
 	var json_string = save_game.get_line()
+	var json_settings_string = save_game.get_line()
 
 	# Creates the helper class to interact with JSON
 	var json = JSON.new()
@@ -68,7 +73,11 @@ func loadGame():
 		return
 
 	data = json.get_data()
-	
+	json.parse(json_settings_string)
+	if not parse_result == OK:
+		print("JSON Parse Error: ", json.get_error_message(), " in ", json_string, " at line ", json.get_error_line())
+		return
+	settings = json.get_data()
 	for achivement in achivements:
 		var value = data
 		for key in achivement["reference"]:
