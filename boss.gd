@@ -25,7 +25,7 @@ func deal_damage():
 	on_hit.emit()
 	
 	if _hp <= 0:
-		on_death.emit(SCORE)
+		on_death.emit(SCORE, "unicorn")
 		$Sprite2D.set_texture(DEATH_TEXTURE)
 		_stop = true
 		await get_tree().create_timer(1.0).timeout # waits for 1 second
