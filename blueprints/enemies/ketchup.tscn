@@ -1,10 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://cbo5wubkdn3b7"]
+[gd_scene load_steps=6 format=3 uid="uid://cbo5wubkdn3b7"]
 
 [ext_resource type="Script" path="res://enemy.gd" id="1_a0agq"]
 [ext_resource type="PackedScene" uid="uid://3w8bgpjttp3k" path="res://blueprints/enemies/tomato.tscn" id="2_liimw"]
 [ext_resource type="Texture2D" uid="uid://bfocwo0kl8qul" path="res://assets/enemies/ketchup.png" id="3_b6035"]
-[ext_resource type="PackedScene" path="res://audio_player.tscn" id="4_j56ck"]
-[ext_resource type="AudioStream" uid="uid://d1q71hx4epq0n" path="res://assets/sounds/bell.mp3" id="5_nuu1k"]
+[ext_resource type="PackedScene" uid="uid://dfkqlfy7e73lr" path="res://audio_player.tscn" id="4_j56ck"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w4tqj"]
 size = Vector2(23.0576, 77.0618)
@@ -26,6 +25,5 @@ scale = Vector2(0.2, 0.2)
 texture = ExtResource("3_b6035")
 
 [node name="AudioPlayer" parent="." instance=ExtResource("4_j56ck")]
-stream1 = ExtResource("5_nuu1k")
 
 [connection signal="body_entered" from="." to="." method="_on_collide"]
