@@ -1,9 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://da4mkwrmsdooe"]
+[gd_scene load_steps=4 format=3 uid="uid://da4mkwrmsdooe"]
 
 [ext_resource type="Script" path="res://menu/achivementsMenu.gd" id="1_25dwa"]
 [ext_resource type="Texture2D" uid="uid://dyv2yqdrwtbpg" path="res://assets/images/background_1.png" id="2_6sdby"]
 [ext_resource type="Theme" uid="uid://bcltmjdk0dva" path="res://menu/button_theme.tres" id="3_e52v2"]
-[ext_resource type="PackedScene" uid="uid://bkydytluia5xd" path="res://menu/achivementItem.tscn" id="4_44tmk"]
 
 [node name="Achivements" type="Control"]
 layout_mode = 3
@@ -61,9 +60,4 @@ layout_mode = 2
 size_flags_vertical = 0
 theme_override_constants/separation = 15
 
-[node name="AchivementItem" parent="ScrollContainer/MarginContainer/VBoxContainer" instance=ExtResource("4_44tmk")]
-custom_minimum_size = Vector2(0, 100)
-layout_mode = 2
-
 [connection signal="button_down" from="Back_btn" to="." method="_on_back_btn_button_down"]
-[connection signal="mouse_entered" from="ScrollContainer/MarginContainer/VBoxContainer/AchivementItem" to="." method="_on_achivement_item_mouse_entered"]

@@ -26,12 +26,6 @@ offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("5_qvfek")
 
-[node name="Background2" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(1116.5, 640.25)
-scale = Vector2(1.24051, 1.24756)
-texture = ExtResource("5_qvfek")
-
 [node name="player" parent="." instance=ExtResource("1_uqs0x")]
 position = Vector2(700, 450)
 rotation = -1.5708
