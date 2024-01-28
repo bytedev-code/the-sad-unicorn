@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://drurrkbbg6e10"]
+[gd_scene load_steps=10 format=3 uid="uid://drurrkbbg6e10"]
 
 [ext_resource type="Script" path="res://win.gd" id="1_ojjr4"]
 [ext_resource type="PackedScene" uid="uid://be02gmhv7yv2g" path="res://achivements/achivementSystem.tscn" id="2_5iluo"]
 [ext_resource type="Texture2D" uid="uid://dlv0l7s5upemc" path="res://assets/images/background_2.png" id="2_mc4tu"]
 [ext_resource type="Texture2D" uid="uid://dmdnw8qysi41x" path="res://assets/enemies/unicorn_happy.png" id="3_gyke1"]
+[ext_resource type="AudioStream" uid="uid://dsjrbswies1iv" path="res://assets/sounds/laughter.mp3" id="5_0qrmj"]
+[ext_resource type="AudioStream" uid="uid://4q36u5uxlxli" path="res://assets/sounds/blob1.mp3" id="6_wfxdd"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o7xrk"]
 bg_color = Color(0.992157, 0.313726, 0.505882, 1)
@@ -58,6 +60,25 @@ rotation = 0.261799
 pivot_offset = Vector2(250, 240)
 texture = ExtResource("3_gyke1")
 expand_mode = 1
+
+[node name="Unicorn2" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -553.598
+offset_top = -240.0
+offset_right = -53.598
+offset_bottom = 240.0
+grow_horizontal = 0
+grow_vertical = 2
+rotation = -0.261799
+pivot_offset = Vector2(250, 240)
+texture = ExtResource("3_gyke1")
+expand_mode = 1
+flip_h = true
 
 [node name="Achivements" parent="." instance=ExtResource("2_5iluo")]
 layout_mode = 1
@@ -148,32 +169,23 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_o7xrk")
 theme_override_styles/hover = SubResource("StyleBoxFlat_csw8a")
 text = "Menu"
 
-[node name="Unicorn2" type="TextureRect" parent="."]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -500.0
-offset_top = -240.0
-offset_bottom = 240.0
-grow_horizontal = 0
-grow_vertical = 2
-rotation = -0.261799
-pivot_offset = Vector2(250, 240)
-texture = ExtResource("3_gyke1")
-expand_mode = 1
-flip_h = true
-
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.6
 autostart = true
 
+[node name="LaughAudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_0qrmj")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_wfxdd")
+
 [connection signal="button_down" from="Control/Button" to="." method="_on_tryAgain"]
+[connection signal="mouse_entered" from="Control/Button" to="." method="_on_btn_mouse_entered"]
+[connection signal="mouse_entered" from="Control/Button2" to="." method="_on_btn_mouse_entered"]
 [connection signal="mouse_entered" from="Control/Button2" to="." method="_enter_endless"]
 [connection signal="mouse_exited" from="Control/Button2" to="." method="_exit_endless"]
 [connection signal="button_down" from="Control/Button3" to="." method="_on_menu"]
+[connection signal="mouse_entered" from="Control/Button3" to="." method="_on_btn_mouse_entered"]
 [connection signal="mouse_entered" from="Control/Button3" to="." method="_enter_Menu"]
 [connection signal="mouse_exited" from="Control/Button3" to="." method="_exit_Menu"]
 [connection signal="timeout" from="Timer" to="." method="_toggle_rotation"]

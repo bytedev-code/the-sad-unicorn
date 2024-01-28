@@ -3,9 +3,13 @@ extends Control
 var unicornHappy = preload("res://assets/enemies/unicorn_happy.png")
 var unicornSad = preload("res://assets/enemies/unicorn_sad.png")
 var unicornEvil = preload("res://assets/enemies/unicorn_evil.png")
+@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
+@onready var laugh_audio_stream_player: AudioStreamPlayer = $LaughAudioStreamPlayer
+
 
 func _ready():
 	$Achivements.displayQueue()
+	laugh_audio_stream_player.play()
 	
 func _toggle_rotation():
 	$Unicorn1.rotation = -$Unicorn1.rotation 
@@ -39,3 +43,8 @@ func _enter_endless():
 func _exit_endless():
 	$Unicorn1.texture = unicornHappy
 	$Unicorn2.texture = unicornHappy
+
+
+func _on_btn_mouse_entered() -> void:
+	audio_stream_player.play()
+

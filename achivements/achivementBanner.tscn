@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bruokkue2jjcc"]
+[gd_scene load_steps=8 format=3 uid="uid://bruokkue2jjcc"]
 
 [ext_resource type="Script" path="res://achivements/achivementBanner.gd" id="1_8t0gy"]
 [ext_resource type="Texture2D" uid="uid://dhi4rtdbmtggy" path="res://assets/enemies/banana.png" id="1_dso1b"]
+[ext_resource type="Texture2D" uid="uid://d1g0r7qds7atm" path="res://assets/particles/rendered_particles/0002.png" id="2_fraid"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r1xrh"]
 bg_color = Color(0.623529, 0.658824, 0.992157, 1)
@@ -15,12 +16,35 @@ font_names = PackedStringArray("Trebuchet MS")
 font_italic = true
 font_weight = 600
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ebqqe"]
+blend_mode = 1
+particles_animation = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_0scb4"]
+spread = 1.0
+angular_velocity_min = -25.0
+angular_velocity_max = 25.0
+orbit_velocity_max = 2.0
+radial_velocity_min = 25.0
+radial_velocity_max = 25.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.1
+scale_max = 0.2
+color = Color(0.47451, 0.494118, 0.984314, 1)
+
 [node name="AchivementBanner" type="Control"]
 custom_minimum_size = Vector2(300, 50)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = 1.0
+offset_right = 10.0
+offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_8t0gy")
@@ -68,6 +92,21 @@ theme_override_colors/font_color = Color(0.113725, 0.113725, 0.113725, 1)
 theme_override_fonts/font = SubResource("SystemFont_ovl4b")
 theme_override_font_sizes/font_size = 17
 text = "Make the Unicorn Laugh"
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Panel"]
+material = SubResource("CanvasItemMaterial_ebqqe")
+position = Vector2(2, 24)
+scale = Vector2(2, 1)
+amount = 15
+process_material = SubResource("ParticleProcessMaterial_0scb4")
+texture = ExtResource("2_fraid")
+
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="Panel"]
+material = SubResource("CanvasItemMaterial_ebqqe")
+position = Vector2(299, 24)
+amount = 15
+process_material = SubResource("ParticleProcessMaterial_0scb4")
+texture = ExtResource("2_fraid")
 
 [node name="ObacityTimer" type="Timer" parent="."]
 wait_time = 3.0
