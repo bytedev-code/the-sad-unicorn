@@ -3,6 +3,7 @@ extends RigidBody2D
 
 signal on_split(blueprint: PackedScene, number: int, position: Vector2)
 signal on_death(score: int, enemy:String)
+signal on_score(score: int)
 signal on_collide()
 signal on_hit()
 signal on_shoot()
@@ -63,10 +64,11 @@ func deal_damage():
 	on_hit.emit()
 	
 	if _hp <= 0:
+		on_score.emit(SCORE)
+		on_death.emit(SCORE, self.name)
+		
 		if SPLIT_INTO:
 			on_split.emit(SPLIT_INTO, SPLIT_NUMBER, position)
-		
-		on_death.emit(SCORE, self.name)
 		queue_free()
 
 func _on_collide(node: Node):

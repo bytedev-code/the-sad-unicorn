@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bn04dsdp1jpme"]
+[gd_scene load_steps=15 format=3 uid="uid://bn04dsdp1jpme"]
 
 [ext_resource type="Script" path="res://game.gd" id="1_i82ie"]
 [ext_resource type="PackedScene" uid="uid://yaolwrsv7rof" path="res://player.tscn" id="1_uqs0x"]
@@ -13,13 +13,18 @@
 [ext_resource type="PackedScene" uid="uid://c78a2sdr4o365" path="res://blueprints/enemies/french_fries_bootle.tscn" id="7_w0a7w"]
 [ext_resource type="PackedScene" uid="uid://cpo57i4sn08q5" path="res://blueprints/enemies/cloud.tscn" id="8_it680"]
 [ext_resource type="PackedScene" uid="uid://wqsnkejfua8v" path="res://blueprints/enemies/clown.tscn" id="9_r8c38"]
+[ext_resource type="Script" path="res://EnemyGenerator.gd" id="14_vdsek"]
 
 [node name="game" type="Node2D"]
 script = ExtResource("1_i82ie")
-enemy_blueprints = Array[PackedScene]([ExtResource("3_q5dd1"), ExtResource("3_lnoqa"), ExtResource("4_uc4ws"), ExtResource("5_iliv0"), ExtResource("6_v2tw8"), ExtResource("7_w0a7w"), ExtResource("8_it680"), ExtResource("9_r8c38")])
-unicorn_blueprint = ExtResource("3_73p12")
-enemy_container = NodePath("enemies")
-BOSS_SCORE_THRESHOLD = 20
+
+[node name="EnemyGenerator" type="Node" parent="."]
+script = ExtResource("14_vdsek")
+ENEMY_BLUEPRINTS = Array[PackedScene]([ExtResource("3_q5dd1"), ExtResource("3_lnoqa"), ExtResource("4_uc4ws"), ExtResource("5_iliv0"), ExtResource("6_v2tw8"), ExtResource("7_w0a7w"), ExtResource("8_it680"), ExtResource("9_r8c38")])
+UNICORN_BLUEPRINT = ExtResource("3_73p12")
+ENEMY_CONTAINER = NodePath("../enemies")
+BOSS_SCORE_THRESHOLD = 10
+GAME_MANAGER = NodePath("..")
 
 [node name="Background" type="TextureRect" parent="."]
 offset_right = 40.0
