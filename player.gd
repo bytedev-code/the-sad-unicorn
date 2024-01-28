@@ -19,6 +19,8 @@ var _hp = 3
 var _is_invincible = false
 var _is_shoot_oncolldown = false
 
+var rotation_speed = 0
+
 @onready var screen_size = get_viewport_rect().size
 
 @onready var InvincibleTimer = $InvincibleTimer
@@ -57,9 +59,14 @@ func _physics_process(delta):
 		if Input.is_action_pressed("player_forward"):
 			velocity += get_direction() * SPEED
 		if Input.is_action_pressed("player_rotate_left"):
-			rotate(-0.1)
+			rotation_speed += -0.2 * delta
 		if Input.is_action_pressed("player_rotate_right"):
-			rotate(0.1)
+			rotation_speed += 0.2 * delta
+		if Input.is_action_just_released("player_rotate_left") or Input.is_action_just_released("player_rotate_right"):
+			rotation_speed = 0
+		
+		if rotation_speed != 0:
+			rotate(rotation_speed)
 			
 	if Input.is_action_pressed("player_shoot"):
 		_spawn_projectile()

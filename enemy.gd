@@ -26,6 +26,7 @@ var _hp = 5
 
 var rng = RandomNumberGenerator.new()
 var dmg_indicator = DamageIndicator.new()
+var movement_ai = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -33,10 +34,9 @@ func _ready():
 	on_hit.connect(dmg_indicator.on_hit_slot)
 	add_child(dmg_indicator)
 	
-	if MOVETYPE == MoveType.RANDOM:
-		_direction = Vector2.from_angle(rng.randf() * 2 * PI)
-	else:
-		_direction = Vector2(1, 0)
+	movement_ai = TargetPointAI.new(self, SPEED)
+	add_child(movement_ai)
+	movement_ai._plan_target_location()
 
 	_rot_speed = rng.randf_range(-0.1, 0.1)
 	_hp = HITPOINTS
@@ -50,9 +50,6 @@ func setup(start_pos: Vector2i):
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	var motion = _direction * SPEED * delta
-	move_and_collide(motion)
-
 	if ROTATE:
 		rotate(_rot_speed)
 	
