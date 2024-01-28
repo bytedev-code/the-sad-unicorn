@@ -19,6 +19,7 @@ enum MoveAI {RANDOM, TARGETPOINT, FOLLOW}
 @export var HITPOINTS: int = 5
 @export var ENEMY_PROJECTILE: PackedScene = null
 @export var MOVE_AI: MoveAI = MoveAI.RANDOM
+@export var PARTICLE_TEXTURE: Texture2D = preload("res://assets/particles/enemy_explosion/clock.png")
 
 var _rot_speed = 0.1
 var _hp = 5
@@ -67,7 +68,7 @@ func deal_damage():
 	if _hp <= 0:
 		var death_particles = DeathParticles.new()
 		death_particles.position = position
-		death_particles.texture = get_node("./Sprite2D").get_texture()
+		death_particles.texture = PARTICLE_TEXTURE
 		get_tree().get_root().add_child(death_particles)
 		
 		on_score.emit(SCORE)

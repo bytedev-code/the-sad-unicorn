@@ -181,11 +181,11 @@ stream = ExtResource("6_wfxdd")
 
 [connection signal="button_down" from="Control/Button" to="." method="_on_tryAgain"]
 [connection signal="mouse_entered" from="Control/Button" to="." method="_on_btn_mouse_entered"]
-[connection signal="mouse_entered" from="Control/Button2" to="." method="_on_btn_mouse_entered"]
 [connection signal="mouse_entered" from="Control/Button2" to="." method="_enter_endless"]
+[connection signal="mouse_entered" from="Control/Button2" to="." method="_on_btn_mouse_entered"]
 [connection signal="mouse_exited" from="Control/Button2" to="." method="_exit_endless"]
 [connection signal="button_down" from="Control/Button3" to="." method="_on_menu"]
-[connection signal="mouse_entered" from="Control/Button3" to="." method="_on_btn_mouse_entered"]
 [connection signal="mouse_entered" from="Control/Button3" to="." method="_enter_Menu"]
+[connection signal="mouse_entered" from="Control/Button3" to="." method="_on_btn_mouse_entered"]
 [connection signal="mouse_exited" from="Control/Button3" to="." method="_exit_Menu"]
 [connection signal="timeout" from="Timer" to="." method="_toggle_rotation"]
