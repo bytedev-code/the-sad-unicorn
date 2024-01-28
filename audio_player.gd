@@ -21,6 +21,7 @@ func _ready() -> void:
 		enemy_or_player.on_death.connect(_on_death)
 	else:
 		enemy_or_player.on_lost.connect(_on_lost)
+		enemy_or_player.on_damage.connect(_on_damage)
 	enemy_or_player.on_shoot.connect(_on_shoot)
 	enemy_audio_stream_player = get_tree().get_first_node_in_group("enemy_audio_stream_player")
 	if death_stream1 is AudioStream:
@@ -44,10 +45,16 @@ func _ready() -> void:
 	randomize()
 
 func _on_lost(_enemy) -> void:
-	print("on lost")
+	#print("on lost")
 	if death_streams.size() > 0:
 		enemy_audio_stream_player.stream = death_streams[randi() % death_streams.size()]
 		enemy_audio_stream_player.play()
+
+func _on_damage(hp, _enemy) -> void:
+	if hp > 0:
+		enemy_audio_stream_player.stream = load("res://assets/sounds/donkey_short.mp3")
+		enemy_audio_stream_player.play()
+		
 	
 func _on_death(_score, _enemy) -> void:
 	if death_streams.size() > 0:
