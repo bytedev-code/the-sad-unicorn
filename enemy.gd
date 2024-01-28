@@ -3,6 +3,7 @@ extends RigidBody2D
 
 signal on_split(blueprint: PackedScene, number: int, position: Vector2)
 signal on_death(score: int, enemy:String)
+signal on_score(score: int)
 signal on_collide()
 signal on_hit()
 signal on_shoot()
@@ -24,9 +25,13 @@ var _rot_speed = 0.1
 var _hp = 5
 
 var rng = RandomNumberGenerator.new()
+var dmg_indicator = DamageIndicator.new()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	dmg_indicator.SPRITE = "../Sprite2D"
+	on_hit.connect(dmg_indicator.on_hit_slot)
+	add_child(dmg_indicator)
 	
 	if MOVETYPE == MoveType.RANDOM:
 		_direction = Vector2.from_angle(rng.randf() * 2 * PI)
@@ -59,10 +64,11 @@ func deal_damage():
 	on_hit.emit()
 	
 	if _hp <= 0:
+		on_score.emit(SCORE)
+		on_death.emit(SCORE, self.name)
+		
 		if SPLIT_INTO:
 			on_split.emit(SPLIT_INTO, SPLIT_NUMBER, position)
-		
-		on_death.emit(SCORE, self.name)
 		queue_free()
 
 func _on_collide(node: Node):
