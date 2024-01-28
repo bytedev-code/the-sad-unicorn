@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://b8boncvfln451"]
+
+[ext_resource type="Script" path="res://enemy.gd" id="1_e5p5s"]
+[ext_resource type="Texture2D" uid="uid://bj8lhywwq5e26" path="res://assets/particles/enemy_explosion/hippopotamus.png" id="2_i0mgc"]
+[ext_resource type="Texture2D" uid="uid://c7iy476kltalp" path="res://assets/enemies/hippopotamus.png" id="3_lcskv"]
+[ext_resource type="PackedScene" path="res://audio_player.tscn" id="3_ltbkk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7lf1m"]
+size = Vector2(162.905, 224.99)
+
+[node name="hippotamus" type="RigidBody2D"]
+script = ExtResource("1_e5p5s")
+SPEED = 210.0
+SPLIT_NUMBER = 0
+SCORE = 30
+HITPOINTS = 6
+PARTICLE_TEXTURE = ExtResource("2_i0mgc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(19.4398, 1.50169)
+rotation = -3.1409
+shape = SubResource("RectangleShape2D_7lf1m")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("3_lcskv")
+
+[node name="AudioPlayer" parent="." instance=ExtResource("3_ltbkk")]
+
+[connection signal="body_entered" from="." to="." method="_on_collide"]

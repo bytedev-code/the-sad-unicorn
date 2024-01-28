@@ -1,31 +1,34 @@
-[gd_scene load_steps=6 format=3 uid="uid://buo3wh3tgean4"]
+[gd_scene load_steps=7 format=3 uid="uid://buo3wh3tgean4"]
 
 [ext_resource type="Script" path="res://enemy.gd" id="1_yos4o"]
-[ext_resource type="PackedScene" uid="uid://5fytbqaaxn0t" path="res://blueprints/enemies/leg.tscn" id="2_c4pvm"]
-[ext_resource type="Texture2D" uid="uid://bpooqjrwxyg5j" path="res://assets/enemies/gorilla.png" id="3_f6beh"]
+[ext_resource type="PackedScene" uid="uid://bq8ygufspp2ct" path="res://blueprints/enemies/clock.tscn" id="2_8q8w1"]
+[ext_resource type="Texture2D" uid="uid://dp1yv05t8ypc5" path="res://assets/particles/enemy_explosion/rabbit.png" id="3_8y5nv"]
 [ext_resource type="PackedScene" path="res://audio_player.tscn" id="4_hqj6c"]
+[ext_resource type="Texture2D" uid="uid://br3g8nhssdj5d" path="res://assets/enemies/rabbit.png" id="4_ushna"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pxqkw"]
-radius = 80.6859
-height = 235.999
+radius = 40.8978
+height = 81.8653
 
-[node name="gorilla" type="RigidBody2D"]
+[node name="rabbit" type="RigidBody2D"]
 script = ExtResource("1_yos4o")
-SPEED = 80.0
-SPLIT_INTO = ExtResource("2_c4pvm")
-SPLIT_NUMBER = 2
-HITPOINTS = 8
+SPEED = 350.0
+SPLIT_INTO = ExtResource("2_8q8w1")
+SPLIT_NUMBER = 4
+SCORE = 15
+HITPOINTS = 4
+PARTICLE_TEXTURE = ExtResource("3_8y5nv")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(4, 16)
+position = Vector2(-5, 18)
 rotation = 0.0174533
 scale = Vector2(2, 2)
 shape = SubResource("CapsuleShape2D_pxqkw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-12, 0)
-scale = Vector2(0.6, 0.6)
-texture = ExtResource("3_f6beh")
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("4_ushna")
 
 [node name="AudioPlayer" parent="." instance=ExtResource("4_hqj6c")]
 

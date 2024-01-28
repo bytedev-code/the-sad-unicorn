@@ -1,0 +1,32 @@
+[gd_scene load_steps=7 format=3 uid="uid://c1dqpolxi2lkk"]
+
+[ext_resource type="Script" path="res://enemy.gd" id="1_x1bab"]
+[ext_resource type="PackedScene" uid="uid://b8boncvfln451" path="res://blueprints/enemies/hippotamus.tscn" id="2_5yhvf"]
+[ext_resource type="Texture2D" uid="uid://ws0s087cxswd" path="res://assets/particles/enemy_explosion/elephant.png" id="3_77hft"]
+[ext_resource type="Texture2D" uid="uid://cq0at248gfi5h" path="res://assets/enemies/elephant.png" id="4_yhcrm"]
+[ext_resource type="PackedScene" path="res://audio_player.tscn" id="5_vqlcf"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_skiqu"]
+radius = 23.5053
+
+[node name="elephant" type="RigidBody2D"]
+script = ExtResource("1_x1bab")
+SPLIT_INTO = ExtResource("2_5yhvf")
+SPLIT_NUMBER = 4
+SCORE = 15
+HITPOINTS = 2
+PARTICLE_TEXTURE = ExtResource("3_77hft")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+rotation = -2.26268
+scale = Vector2(2, 2)
+shape = SubResource("CircleShape2D_skiqu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("4_yhcrm")
+
+[node name="AudioPlayer" parent="." instance=ExtResource("5_vqlcf")]
+
+[connection signal="body_entered" from="." to="." method="_on_collide"]
