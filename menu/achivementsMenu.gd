@@ -16,10 +16,6 @@ func _ready():
 func updateSize():
 	$ScrollContainer.size.y = get_viewport().size.y - 200
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
 
 func _on_back_btn_button_down():
 	get_tree().change_scene_to_file("res://menu/menu.tscn")

@@ -90,14 +90,17 @@ func checkforAchivementAndSetInQueue():
 			value = value[key]
 		if (typeof(value) == TYPE_FLOAT or typeof(value) == TYPE_INT) and not achivement["reached"] and value >= achivement["goal"]:
 			achivement["reached"] = true
-			save.data["queue"].append(achivement)
+			save.data["queue"].append(achivement["name"])
 			return achivement
 
 func displayQueue():
-	for achivment in save.data["queue"]:
-		displayAchivment(achivment)
-	save.date["queue"] = []
-	save.data.saveGame()
+	for achivementName in save.data["queue"]:
+		for achivement in save.achivements:
+			if achivement["name"] == achivementName:
+				displayAchivment(achivement)
+				break
+	save.data["queue"] = []
+	save.saveGame()
 
 var banners = []
 var tween
