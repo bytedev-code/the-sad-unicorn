@@ -6,6 +6,7 @@ extends Node
 @export var ENEMY_CONTAINER: NodePath
 
 @export var BOSS_SCORE_THRESHOLD: int = 100
+@export var INITIAL_ENEMIES: int = 2
 @export var NEW_ENEMIES_THRESHOLD: int = 2
 @export var GAME_MANAGER: NodePath
 
@@ -22,7 +23,7 @@ func _ready():
 	enemy_spawn_timer.timeout.connect(_spawn_new_enemies)
 	add_child(enemy_spawn_timer)
 	
-	for i in range(2):
+	for i in range(INITIAL_ENEMIES):
 		_spawn_random_enemy()
 
 func _spawn_new_enemies():

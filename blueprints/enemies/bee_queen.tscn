@@ -15,6 +15,7 @@ SPEED = 300.0
 SPLIT_INTO = ExtResource("2_ah7fu")
 SPLIT_NUMBER = 6
 SCORE = 5
+MOVE_AI = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.999998, 0)

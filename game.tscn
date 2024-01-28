@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://game.gd" id="1_i82ie"]
 [ext_resource type="PackedScene" uid="uid://yaolwrsv7rof" path="res://player.tscn" id="1_uqs0x"]
 [ext_resource type="PackedScene" uid="uid://c7pp2emx7mukt" path="res://blueprints/enemies/unicorn.tscn" id="3_73p12"]
-[ext_resource type="PackedScene" uid="uid://yarp424i02k2" path="res://blueprints/enemies/monkey.tscn" id="3_lnoqa"]
+[ext_resource type="PackedScene" uid="uid://ccibbn5oa74tb" path="res://blueprints/enemies/monkey.tscn" id="3_lnoqa"]
 [ext_resource type="PackedScene" uid="uid://dirmfbrgs5jhn" path="res://blueprints/enemies/pizza.tscn" id="3_q5dd1"]
 [ext_resource type="PackedScene" uid="uid://bvut3uk1ruoiu" path="res://ui/hud.tscn" id="4_a746c"]
 [ext_resource type="PackedScene" uid="uid://bbrec76wuqjut" path="res://blueprints/enemies/bee_queen.tscn" id="4_uc4ws"]
@@ -23,7 +23,7 @@ script = ExtResource("14_vdsek")
 ENEMY_BLUEPRINTS = Array[PackedScene]([ExtResource("3_q5dd1"), ExtResource("3_lnoqa"), ExtResource("4_uc4ws"), ExtResource("5_iliv0"), ExtResource("6_v2tw8"), ExtResource("7_w0a7w"), ExtResource("8_it680"), ExtResource("9_r8c38")])
 UNICORN_BLUEPRINT = ExtResource("3_73p12")
 ENEMY_CONTAINER = NodePath("../enemies")
-BOSS_SCORE_THRESHOLD = 10
+INITIAL_ENEMIES = 4
 GAME_MANAGER = NodePath("..")
 
 [node name="Background" type="TextureRect" parent="."]
