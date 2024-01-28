@@ -42,7 +42,7 @@ theme_override_constants/separation = 18
 layout_mode = 2
 theme = ExtResource("2_5sh5j")
 disabled = true
-text = "Conintue"
+text = "Continue"
 
 [node name="newGame_btn" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -72,8 +72,14 @@ grow_horizontal = 0
 theme = ExtResource("2_5sh5j")
 text = "X"
 
+[node name="ConfirmationDialog" type="ConfirmationDialog" parent="."]
+size = Vector2i(384, 106)
+dialog_text = "Are you sure you want to start a new game?
+This will overwrite your save file"
+
 [connection signal="button_down" from="VBoxContainer/continue_btn" to="." method="_on_continue_btn_button_down"]
 [connection signal="button_down" from="VBoxContainer/newGame_btn" to="." method="_on_new_game_btn_button_down"]
 [connection signal="button_down" from="VBoxContainer/options_btn" to="." method="_on_options_btn_button_down"]
 [connection signal="button_down" from="VBoxContainer/achivements_btn" to="." method="_on_achivements_btn_button_down"]
 [connection signal="button_down" from="Back_btn" to="." method="_on_back_btn_button_down"]
+[connection signal="confirmed" from="ConfirmationDialog" to="." method="_on_confirmation_dialog_confirmed"]

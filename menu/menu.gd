@@ -17,8 +17,13 @@ func _on_continue_btn_button_down():
 
 
 func _on_new_game_btn_button_down():
-	save.resetGame()
-	get_tree().change_scene_to_file("res://game.tscn")
+	if save.data["game"]["started"]["total"] > 0:
+		print($ConfirmationDialog.position)
+		print($VBoxContainer.position)
+		$ConfirmationDialog.position = $VBoxContainer.position
+		$ConfirmationDialog.visible = true
+	else:
+		_on_confirmation_dialog_confirmed()
 
 
 func _on_options_btn_button_down():
@@ -35,3 +40,8 @@ func _on_back_btn_button_down():
 func _input(ev):
 	if Input.is_key_pressed(KEY_ESCAPE):
 		get_tree().quit()
+
+
+func _on_confirmation_dialog_confirmed():
+	save.resetGame()
+	get_tree().change_scene_to_file("res://game.tscn")
