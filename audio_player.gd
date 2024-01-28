@@ -23,10 +23,16 @@ func _ready() -> void:
 	enemy_audio_stream_player = get_tree().get_first_node_in_group("enemy_audio_stream_player")
 	if death_stream1 is AudioStream:
 		death_streams.append(death_stream1)
+	else:
+		death_streams.append(load("res://assets/sounds/fart3.mp3"))
 	if death_stream2 is AudioStream:
 		death_streams.append(death_stream2)
+	else:
+		death_streams.append(load("res://assets/sounds/fart2.mp3"))
 	if death_stream3 is AudioStream:
 		death_streams.append(death_stream3)
+	else:
+		death_streams.append(load("res://assets/sounds/wiehern2.mp3"))
 	if shoot_stream1 is AudioStream:
 		shoot_streams.append(shoot_stream1)
 	if shoot_stream2 is AudioStream:
