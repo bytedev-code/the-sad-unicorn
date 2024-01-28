@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://cbo5wubkdn3b7"]
+[gd_scene load_steps=7 format=3 uid="uid://cbo5wubkdn3b7"]
 
 [ext_resource type="Script" path="res://enemy.gd" id="1_a0agq"]
 [ext_resource type="PackedScene" uid="uid://3w8bgpjttp3k" path="res://blueprints/enemies/tomato.tscn" id="2_liimw"]
 [ext_resource type="Texture2D" uid="uid://bfocwo0kl8qul" path="res://assets/enemies/ketchup.png" id="3_b6035"]
-[ext_resource type="PackedScene" uid="uid://dfkqlfy7e73lr" path="res://audio_player.tscn" id="4_j56ck"]
+[ext_resource type="Texture2D" uid="uid://d0kx0x778b3pe" path="res://assets/particles/enemy_explosion/ketchup.png" id="3_sov5h"]
+[ext_resource type="PackedScene" path="res://audio_player.tscn" id="4_j56ck"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w4tqj"]
 size = Vector2(23.0576, 77.0618)
@@ -14,6 +15,7 @@ SPEED = 120.0
 SPLIT_INTO = ExtResource("2_liimw")
 SPLIT_NUMBER = 8
 SCORE = 25
+PARTICLE_TEXTURE = ExtResource("3_sov5h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2.02617, 0.999543)

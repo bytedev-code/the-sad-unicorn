@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://vk07l4esuvrc"]
+[gd_scene load_steps=7 format=3 uid="uid://dybsghhufqeln"]
 
 [ext_resource type="Script" path="res://enemy.gd" id="1_0w0tc"]
-[ext_resource type="PackedScene" uid="uid://b1aiafdjt0e1y" path="res://blueprints/enemies/cake.tscn" id="2_3n7yy"]
+[ext_resource type="PackedScene" uid="uid://cxbogwoinfek5" path="res://blueprints/enemies/cake.tscn" id="2_3n7yy"]
 [ext_resource type="Texture2D" uid="uid://b3ewn5xs5hogc" path="res://assets/enemies/gummy_bear.png" id="3_8u131"]
+[ext_resource type="Texture2D" uid="uid://dd1hfdxgr62yy" path="res://assets/particles/enemy_explosion/gummy_bear.png" id="3_x1cea"]
 [ext_resource type="PackedScene" path="res://audio_player.tscn" id="4_q7ccs"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pxqkw"]
@@ -16,6 +17,7 @@ SPLIT_INTO = ExtResource("2_3n7yy")
 SPLIT_NUMBER = 2
 SCORE = 20
 HITPOINTS = 2
+PARTICLE_TEXTURE = ExtResource("3_x1cea")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 0.0762196

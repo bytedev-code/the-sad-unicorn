@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://kngtronoh7oc"]
+[gd_scene load_steps=7 format=3 uid="uid://bnvay2hhsybga"]
 
 [ext_resource type="Script" path="res://enemy.gd" id="1_vr6jd"]
-[ext_resource type="PackedScene" uid="uid://dvc3nvxt7k6tc" path="res://blueprints/enemies/cucumber.tscn" id="2_nd7lf"]
+[ext_resource type="PackedScene" uid="uid://c4rw13i08a2hh" path="res://blueprints/enemies/cucumber.tscn" id="2_nd7lf"]
 [ext_resource type="Texture2D" uid="uid://w5tnxi4w8x62" path="res://assets/enemies/green_burger_300x300.png" id="3_4mpq4"]
+[ext_resource type="Texture2D" uid="uid://b4w7ro8qmkea7" path="res://assets/particles/enemy_explosion/green_burger_300x300.png" id="3_c46vi"]
 [ext_resource type="PackedScene" path="res://audio_player.tscn" id="4_y3qdr"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pxqkw"]
@@ -16,6 +17,7 @@ SPLIT_INTO = ExtResource("2_nd7lf")
 SPLIT_NUMBER = 6
 SCORE = 20
 HITPOINTS = 4
+PARTICLE_TEXTURE = ExtResource("3_c46vi")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-13, -1)

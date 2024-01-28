@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://b1aiafdjt0e1y"]
+[gd_scene load_steps=6 format=3 uid="uid://cxbogwoinfek5"]
 
 [ext_resource type="Script" path="res://enemy.gd" id="1_peqv1"]
 [ext_resource type="Texture2D" uid="uid://b83sr7ip6gbhp" path="res://assets/enemies/cake.png" id="2_5koob"]
+[ext_resource type="Texture2D" uid="uid://dks6nr7vxxjd2" path="res://assets/particles/enemy_explosion/cake.png" id="2_x2dxk"]
 [ext_resource type="PackedScene" path="res://audio_player.tscn" id="3_63h6o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7lf1m"]
@@ -13,11 +14,11 @@ SPEED = 50.0
 SPLIT_NUMBER = 0
 SCORE = 20
 HITPOINTS = 8
+PARTICLE_TEXTURE = ExtResource("2_x2dxk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-9, 6.50001)
 rotation = -3.1409
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_7lf1m")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

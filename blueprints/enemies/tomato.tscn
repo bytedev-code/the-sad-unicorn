@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://3w8bgpjttp3k"]
+[gd_scene load_steps=6 format=3 uid="uid://3w8bgpjttp3k"]
 
 [ext_resource type="Script" path="res://enemy.gd" id="1_fh02u"]
+[ext_resource type="Texture2D" uid="uid://uhuwjjh6623h" path="res://assets/particles/enemy_explosion/tomato.png" id="2_mivxp"]
 [ext_resource type="Texture2D" uid="uid://igdndw1rlfbo" path="res://assets/enemies/tomato.png" id="2_mmrng"]
 [ext_resource type="PackedScene" path="res://audio_player.tscn" id="3_b27dc"]
 
@@ -13,6 +14,7 @@ SPEED = 200.0
 SPLIT_NUMBER = 0
 SCORE = 2
 HITPOINTS = 2
+PARTICLE_TEXTURE = ExtResource("2_mivxp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.999998, 2)

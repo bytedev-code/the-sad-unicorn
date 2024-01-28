@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dbrbm1145ci0r"]
+[gd_scene load_steps=6 format=3 uid="uid://bbfy7e7sdooec"]
 
 [ext_resource type="Script" path="res://enemy.gd" id="1_rgdmv"]
 [ext_resource type="Texture2D" uid="uid://bh5f2mckx0k4y" path="res://assets/enemies/wiener.png" id="2_d6wgw"]
+[ext_resource type="Texture2D" uid="uid://bfwpu8qorenp2" path="res://assets/particles/enemy_explosion/wiener.png" id="2_orf4a"]
 [ext_resource type="PackedScene" path="res://audio_player.tscn" id="3_4hmvs"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a5nan"]
@@ -14,6 +15,7 @@ SPEED = 300.0
 SPLIT_NUMBER = 0
 SCORE = 20
 HITPOINTS = 4
+PARTICLE_TEXTURE = ExtResource("2_orf4a")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(4, -6)

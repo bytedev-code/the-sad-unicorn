@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://c78a2sdr4o365"]
+[gd_scene load_steps=7 format=3 uid="uid://c78a2sdr4o365"]
 
 [ext_resource type="Script" path="res://enemy.gd" id="1_wpvbb"]
 [ext_resource type="PackedScene" uid="uid://cbo5wubkdn3b7" path="res://blueprints/enemies/ketchup.tscn" id="2_v7rhf"]
+[ext_resource type="Texture2D" uid="uid://d3wb4j830k3w" path="res://assets/particles/enemy_explosion/french_fries_bottle_300x300.png" id="3_a2ga7"]
 [ext_resource type="Texture2D" uid="uid://xhlnbgktpepg" path="res://assets/enemies/french_fries_bottle_300x300.png" id="3_cyiv0"]
-[ext_resource type="PackedScene" uid="uid://dfkqlfy7e73lr" path="res://audio_player.tscn" id="4_yg3mu"]
+[ext_resource type="PackedScene" path="res://audio_player.tscn" id="4_yg3mu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_w4tqj"]
 size = Vector2(23.0576, 64.0426)
@@ -14,6 +15,7 @@ SPEED = 80.0
 SPLIT_INTO = ExtResource("2_v7rhf")
 SPLIT_NUMBER = 4
 HITPOINTS = 8
+PARTICLE_TEXTURE = ExtResource("3_a2ga7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2.00811, -0.0350513)

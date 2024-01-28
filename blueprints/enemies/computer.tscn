@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://d06c7mc1rh4ib"]
+[gd_scene load_steps=7 format=3 uid="uid://dxfc31oq0lhni"]
 
 [ext_resource type="Script" path="res://enemy.gd" id="1_7ciie"]
-[ext_resource type="PackedScene" uid="uid://cw7ocsuuy1mwy" path="res://blueprints/enemies/mouse.tscn" id="2_jbk6i"]
+[ext_resource type="PackedScene" uid="uid://bylnqb6nbmf0d" path="res://blueprints/enemies/mouse.tscn" id="2_jbk6i"]
+[ext_resource type="Texture2D" uid="uid://blhqwjroxkhf7" path="res://assets/particles/enemy_explosion/computer.png" id="3_gccji"]
 [ext_resource type="Texture2D" uid="uid://jtqxcl033sog" path="res://assets/enemies/computer.png" id="3_jlgv8"]
 [ext_resource type="PackedScene" path="res://audio_player.tscn" id="4_hhbx8"]
 
@@ -15,6 +16,7 @@ SPLIT_INTO = ExtResource("2_jbk6i")
 SPLIT_NUMBER = 4
 SCORE = 101
 HITPOINTS = 15
+PARTICLE_TEXTURE = ExtResource("3_gccji")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-27.3389, 7.41415)

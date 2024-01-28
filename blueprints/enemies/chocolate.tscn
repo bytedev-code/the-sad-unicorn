@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cdq72aw58l7da"]
+[gd_scene load_steps=6 format=3 uid="uid://cdq72aw58l7da"]
 
 [ext_resource type="Script" path="res://enemy.gd" id="1_ku8ro"]
 [ext_resource type="Texture2D" uid="uid://dk870giee54eu" path="res://assets/enemies/chocolate_bar.png" id="2_0e3sa"]
+[ext_resource type="Texture2D" uid="uid://b3qb1m0mo888a" path="res://assets/particles/enemy_explosion/chocolate_bar.png" id="2_6js17"]
 [ext_resource type="PackedScene" path="res://audio_player.tscn" id="3_kp2ba"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_chy0a"]
@@ -13,6 +14,7 @@ SPEED = 40.0
 SPLIT_NUMBER = 0
 SCORE = 4
 HITPOINTS = 12
+PARTICLE_TEXTURE = ExtResource("2_6js17")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.499998, -2)

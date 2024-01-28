@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://wqsnkejfua8v"]
+[gd_scene load_steps=7 format=3 uid="uid://wqsnkejfua8v"]
 
 [ext_resource type="Script" path="res://enemy.gd" id="1_lgd3g"]
 [ext_resource type="PackedScene" uid="uid://2coj86mouh1l" path="res://blueprints/enemies/clown_car.tscn" id="2_ijpmu"]
+[ext_resource type="Texture2D" uid="uid://csacrgfqjpnj8" path="res://assets/particles/enemy_explosion/clown_300x300.png" id="3_00uqd"]
 [ext_resource type="Texture2D" uid="uid://b1normao8a54y" path="res://assets/enemies/clown_300x300.png" id="3_yjm7r"]
-[ext_resource type="PackedScene" uid="uid://dfkqlfy7e73lr" path="res://audio_player.tscn" id="4_ivpqn"]
+[ext_resource type="PackedScene" path="res://audio_player.tscn" id="4_ivpqn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_j5fwd"]
 radius = 28.9914
@@ -13,7 +14,7 @@ script = ExtResource("1_lgd3g")
 SPLIT_INTO = ExtResource("2_ijpmu")
 SPLIT_NUMBER = 4
 SCORE = 5
-MOVE_AI = 2
+PARTICLE_TEXTURE = ExtResource("3_00uqd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2, -2)

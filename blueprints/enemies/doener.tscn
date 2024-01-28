@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bbqo7j6aywqrq"]
+[gd_scene load_steps=7 format=3 uid="uid://o4sxj25f5oxq"]
 
 [ext_resource type="Script" path="res://enemy.gd" id="1_hcwfu"]
-[ext_resource type="PackedScene" uid="uid://ugcn3ipu4as2" path="res://blueprints/enemies/sheep.tscn" id="2_sivh7"]
+[ext_resource type="PackedScene" uid="uid://dxb58bpkqed0m" path="res://blueprints/enemies/sheep.tscn" id="2_sivh7"]
 [ext_resource type="Texture2D" uid="uid://d02x2d3iprpfc" path="res://assets/enemies/doener.png" id="3_bmowq"]
+[ext_resource type="Texture2D" uid="uid://dguoe54oup8mh" path="res://assets/particles/enemy_explosion/doener.png" id="3_fef6n"]
 [ext_resource type="PackedScene" path="res://audio_player.tscn" id="4_y1mha"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pxqkw"]
@@ -15,6 +16,7 @@ SPLIT_INTO = ExtResource("2_sivh7")
 SPLIT_NUMBER = 4
 SCORE = 15
 HITPOINTS = 6
+PARTICLE_TEXTURE = ExtResource("3_fef6n")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(4, 16)

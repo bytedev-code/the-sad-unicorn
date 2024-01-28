@@ -1,19 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://dl85jm6h0afs1"]
+[gd_scene load_steps=6 format=3 uid="uid://np4h200k5lo7"]
 
 [ext_resource type="Script" path="res://enemy.gd" id="1_o2cdx"]
 [ext_resource type="Texture2D" uid="uid://8fwd1wxc3mc7" path="res://assets/enemies/paperclip.png" id="2_mqra6"]
+[ext_resource type="Texture2D" uid="uid://bf5awosuktsj5" path="res://assets/particles/enemy_explosion/paperclip.png" id="2_so58c"]
 [ext_resource type="PackedScene" path="res://audio_player.tscn" id="3_icrj6"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_m0dhc"]
 radius = 23.9911
 height = 122.048
 
-[node name="leg" type="RigidBody2D"]
+[node name="paperclip" type="RigidBody2D"]
 script = ExtResource("1_o2cdx")
 SPEED = 120.0
 SPLIT_NUMBER = 0
 SCORE = 15
 HITPOINTS = 4
+PARTICLE_TEXTURE = ExtResource("2_so58c")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 3.12601

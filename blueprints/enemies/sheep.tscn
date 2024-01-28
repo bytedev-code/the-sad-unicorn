@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://ugcn3ipu4as2"]
+[gd_scene load_steps=6 format=3 uid="uid://dxb58bpkqed0m"]
 
 [ext_resource type="Script" path="res://enemy.gd" id="1_0btw6"]
 [ext_resource type="Texture2D" uid="uid://dvucdd1col7op" path="res://assets/enemies/sheep.png" id="2_5m3bo"]
+[ext_resource type="Texture2D" uid="uid://orouwvx1e4g2" path="res://assets/particles/enemy_explosion/sheep.png" id="2_gq6ev"]
 [ext_resource type="PackedScene" path="res://audio_player.tscn" id="3_aih7o"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a5nan"]
@@ -13,6 +14,7 @@ script = ExtResource("1_0btw6")
 SPEED = 150.0
 SPLIT_NUMBER = 0
 HITPOINTS = 8
+PARTICLE_TEXTURE = ExtResource("2_gq6ev")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2, -3)

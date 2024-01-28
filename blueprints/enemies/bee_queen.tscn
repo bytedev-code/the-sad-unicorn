@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bbrec76wuqjut"]
+[gd_scene load_steps=7 format=3 uid="uid://bbrec76wuqjut"]
 
 [ext_resource type="Script" path="res://enemy.gd" id="1_e2ucn"]
 [ext_resource type="PackedScene" uid="uid://c67uguh53333i" path="res://blueprints/enemies/honey.tscn" id="2_ah7fu"]
+[ext_resource type="Texture2D" uid="uid://2asbdpp5qmom" path="res://assets/particles/enemy_explosion/bee_queen.png" id="3_2ew5y"]
 [ext_resource type="Texture2D" uid="uid://beax6bqsqx4ow" path="res://assets/enemies/bee_queen.png" id="3_ejsan"]
-[ext_resource type="PackedScene" uid="uid://dfkqlfy7e73lr" path="res://audio_player.tscn" id="4_w4mdp"]
+[ext_resource type="PackedScene" path="res://audio_player.tscn" id="4_w4mdp"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pm8kl"]
 radius = 19.5
@@ -11,11 +12,10 @@ height = 80.7913
 
 [node name="bee_queen" type="RigidBody2D"]
 script = ExtResource("1_e2ucn")
-SPEED = 300.0
 SPLIT_INTO = ExtResource("2_ah7fu")
 SPLIT_NUMBER = 6
 SCORE = 5
-MOVE_AI = 2
+PARTICLE_TEXTURE = ExtResource("3_2ew5y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.999998, 0)

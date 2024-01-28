@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cpo57i4sn08q5"]
+[gd_scene load_steps=7 format=3 uid="uid://cpo57i4sn08q5"]
 
 [ext_resource type="Script" path="res://enemy.gd" id="1_fy4bn"]
 [ext_resource type="PackedScene" uid="uid://c71wr50ghu4ao" path="res://blueprints/enemies/lightning.tscn" id="2_yqmjk"]
 [ext_resource type="Texture2D" uid="uid://p662g1fg43g" path="res://assets/enemies/cloud .png" id="3_55yke"]
+[ext_resource type="Texture2D" uid="uid://brunm0oe7xunu" path="res://assets/particles/enemy_explosion/cloud .png" id="3_bxutl"]
 [ext_resource type="PackedScene" path="res://audio_player.tscn" id="4_k00ee"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4nlwv"]
@@ -16,6 +17,7 @@ SPLIT_INTO = ExtResource("2_yqmjk")
 SPLIT_NUMBER = 10
 SCORE = 30
 HITPOINTS = 3
+PARTICLE_TEXTURE = ExtResource("3_bxutl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2.02617, 0.999543)

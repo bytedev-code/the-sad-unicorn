@@ -1,21 +1,23 @@
-[gd_scene load_steps=6 format=3 uid="uid://cw7ocsuuy1mwy"]
+[gd_scene load_steps=7 format=3 uid="uid://bylnqb6nbmf0d"]
 
 [ext_resource type="Script" path="res://enemy.gd" id="1_resac"]
-[ext_resource type="PackedScene" uid="uid://dl85jm6h0afs1" path="res://blueprints/enemies/paperclip.tscn" id="2_224t1"]
+[ext_resource type="PackedScene" uid="uid://np4h200k5lo7" path="res://blueprints/enemies/paperclip.tscn" id="2_224t1"]
 [ext_resource type="Texture2D" uid="uid://esnep6clr0" path="res://assets/enemies/mouse.png" id="3_3riou"]
+[ext_resource type="Texture2D" uid="uid://utyli57yxkhg" path="res://assets/particles/enemy_explosion/mouse.png" id="3_e3yfn"]
 [ext_resource type="PackedScene" path="res://audio_player.tscn" id="4_vh4qc"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pxqkw"]
 radius = 17.8988
 height = 85.0167
 
-[node name="gorilla" type="RigidBody2D"]
+[node name="mouse" type="RigidBody2D"]
 script = ExtResource("1_resac")
 SPEED = 230.0
 SPLIT_INTO = ExtResource("2_224t1")
 SPLIT_NUMBER = 7
 SCORE = 20
 HITPOINTS = 4
+PARTICLE_TEXTURE = ExtResource("3_e3yfn")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-9, 12)
