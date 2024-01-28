@@ -3,6 +3,8 @@ extends Control
 var unicornHappy = preload("res://assets/enemies/unicorn_happy.png")
 var unicornSad = preload("res://assets/enemies/unicorn_sad.png")
 
+func _ready():
+	$Achivements.displayQueue()
 
 func _toggle_rotation():
 	$Unicorn1.rotation = -$Unicorn1.rotation 

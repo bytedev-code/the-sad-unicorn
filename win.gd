@@ -4,7 +4,9 @@ var unicornHappy = preload("res://assets/enemies/unicorn_happy.png")
 var unicornSad = preload("res://assets/enemies/unicorn_sad.png")
 var unicornEvil = preload("res://assets/enemies/unicorn_evil.png")
 
-
+func _ready():
+	$Achivements.displayQueue()
+	
 func _toggle_rotation():
 	$Unicorn1.rotation = -$Unicorn1.rotation 
 	$Unicorn2.rotation = -$Unicorn2.rotation 

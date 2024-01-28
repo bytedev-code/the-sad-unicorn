@@ -33,18 +33,3 @@ func _on_mouse_entered():
 	var tween = create_tween()
 	tween.tween_property($Panel, "scale:y", 1.1, .5).set_ease(Tween.EASE_OUT)
 	tween.parallel().tween_property($Panel, "scale:x", 1.1,.5).set_ease(Tween.EASE_OUT)
-
-pass # Replace with function body.
-
-
-func _on_mouse_exited():
-	pass # Replace with function body.
-
-
-func _on_v_box_container_mouse_entered():
-	print("test")
-
-
-func _on_achivement_item_mouse_entered():
-	print("test")
-	pass # Replace with function body.

@@ -8,7 +8,7 @@ func setMaxHealth(health:int):
 	
 func damageTaken(health:int, enemy:String):
 	setHealth(health)
-	touchedEnemy(enemy)
+	touchedEnemy(enemy, health)
 	
 func setHealth(health:int):
 	$health.setHealth(health)
@@ -35,13 +35,14 @@ func gameWon(mode: String):
 
 func gameLost(mode: String):
 	$Achivements.gameLost(mode)
-	get_tree().change_scene_to_file("res://loss.tscn")
+	
 	
 func death(enemy: String):
 	$Achivements.death(enemy)
+	get_tree().change_scene_to_file("res://loss.tscn")
 	
-func touchedEnemy(enemy: String):
-	$Achivements.touchedEnemy(enemy)
+func touchedEnemy(enemy: String, health:int):
+	$Achivements.touchedEnemy(enemy, health)
 	
 func _input(ev):
 	if Input.is_key_pressed(KEY_K):

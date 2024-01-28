@@ -21,7 +21,7 @@ func gameWon(mode: String)	:
 	else:
 		save.data["game"]["completed"][mode] = 1
 	save.data["game"]["completed"]["total"] += 1
-	checkforAchivement()
+	checkforAchivementAndSetInQueue()
 	save.saveGame()
 
 func gameLost(mode: String):
@@ -30,7 +30,7 @@ func gameLost(mode: String):
 	else:
 		save.data["game"]["lost"][mode] = 1
 	save.data["game"]["lost"]["total"] += 1
-	checkforAchivement()
+	checkforAchivementAndSetInQueue()
 	save.saveGame()
 	
 func death(enemy: String):
@@ -38,15 +38,18 @@ func death(enemy: String):
 		save.data["enemies"]["killed_by"][enemy] += 1
 	else:
 		save.data["enemies"]["killed_by"][enemy] = 1
-	checkforAchivement()
+	checkforAchivementAndSetInQueue() 
 	save.saveGame()
 	
-func touchedEnemy(enemy: String):
+func touchedEnemy(enemy: String, health:int):
 	if(save.data["enemies"]["damageTaken"].has(enemy)):
 		save.data["enemies"]["damageTaken"][enemy] += 1
 	else:
 		save.data["enemies"]["damageTaken"][enemy] = 1
-	checkforAchivement()
+	if health > 0:
+		checkforAchivement()
+	else:
+		checkforAchivementAndSetInQueue() 
 	save.saveGame()
 	
 func enemyKilled(enemy:String):
@@ -78,6 +81,24 @@ func checkforAchivement():
 			achivement["reached"] = true
 			displayAchivment(achivement)
 			
+func checkforAchivementAndSetInQueue():
+	for achivement in save.achivements:
+		var value = save.data
+		for key in achivement["reference"]:
+			if not value.has(key):
+				break
+			value = value[key]
+		if (typeof(value) == TYPE_FLOAT or typeof(value) == TYPE_INT) and not achivement["reached"] and value >= achivement["goal"]:
+			achivement["reached"] = true
+			save.data["queue"].append(achivement)
+			return achivement
+
+func displayQueue():
+	for achivment in save.data["queue"]:
+		displayAchivment(achivment)
+	save.date["queue"] = []
+	save.data.saveGame()
+
 var banners = []
 var tween
 func displayAchivment(achivment):

@@ -6,6 +6,7 @@ var settings = {
 	"volume":50
 }
 var template = {
+	"queue": [],
 	"enemies": {
 		"killed": {
 			"total":0,
@@ -58,6 +59,7 @@ func resetGame():
 	
 func loadGame():
 	if not FileAccess.file_exists("user://savegame.save"):
+		resetGame()
 		return
 	var save_game = FileAccess.open("user://savegame.save", FileAccess.READ)
 	var json_string = save_game.get_line()

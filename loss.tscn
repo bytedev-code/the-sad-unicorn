@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://7w642qit2vcy"]
+[gd_scene load_steps=8 format=3 uid="uid://7w642qit2vcy"]
 
 [ext_resource type="Texture2D" uid="uid://b0hr1nsxp1gok" path="res://assets/enemies/unicorn_sad.png" id="1_21h38"]
 [ext_resource type="Script" path="res://loss.gd" id="1_lve7o"]
+[ext_resource type="PackedScene" uid="uid://be02gmhv7yv2g" path="res://achivements/achivementSystem.tscn" id="2_ma8sy"]
 [ext_resource type="Texture2D" uid="uid://dyv2yqdrwtbpg" path="res://assets/images/background_1.png" id="2_yh5fx"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o7xrk"]
@@ -33,6 +34,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_lve7o")
+
+[node name="Achivements" parent="." instance=ExtResource("2_ma8sy")]
+layout_mode = 1
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
