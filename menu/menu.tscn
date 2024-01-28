@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://dqefgcd2fjaot"]
+[gd_scene load_steps=5 format=3 uid="uid://dqefgcd2fjaot"]
 
 [ext_resource type="Script" path="res://menu/menu.gd" id="1_0ks8r"]
 [ext_resource type="Theme" uid="uid://bcltmjdk0dva" path="res://menu/button_theme.tres" id="2_5sh5j"]
 [ext_resource type="Texture2D" uid="uid://c8ys1jdvespkk" path="res://assets/images/splash_screen.png" id="2_d0xqj"]
+[ext_resource type="AudioStream" uid="uid://4q36u5uxlxli" path="res://assets/sounds/blob1.mp3" id="4_g7jrj"]
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -77,9 +78,17 @@ size = Vector2i(384, 106)
 dialog_text = "Are you sure you want to start a new game?
 This will overwrite your save file"
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_g7jrj")
+
 [connection signal="button_down" from="VBoxContainer/continue_btn" to="." method="_on_continue_btn_button_down"]
+[connection signal="mouse_entered" from="VBoxContainer/continue_btn" to="." method="_on_btn_mouse_entered"]
 [connection signal="button_down" from="VBoxContainer/newGame_btn" to="." method="_on_new_game_btn_button_down"]
+[connection signal="mouse_entered" from="VBoxContainer/newGame_btn" to="." method="_on_btn_mouse_entered"]
 [connection signal="button_down" from="VBoxContainer/options_btn" to="." method="_on_options_btn_button_down"]
+[connection signal="mouse_entered" from="VBoxContainer/options_btn" to="." method="_on_btn_mouse_entered"]
 [connection signal="button_down" from="VBoxContainer/achivements_btn" to="." method="_on_achivements_btn_button_down"]
+[connection signal="mouse_entered" from="VBoxContainer/achivements_btn" to="." method="_on_btn_mouse_entered"]
 [connection signal="button_down" from="Back_btn" to="." method="_on_back_btn_button_down"]
+[connection signal="mouse_entered" from="Back_btn" to="." method="_on_btn_mouse_entered"]
 [connection signal="confirmed" from="ConfirmationDialog" to="." method="_on_confirmation_dialog_confirmed"]

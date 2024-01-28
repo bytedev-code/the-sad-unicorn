@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://enemy.gd" id="1_tdysd"]
 [ext_resource type="Texture2D" uid="uid://bs1cmrw38r6rm" path="res://assets/enemies/lightning.png" id="2_hssia"]
-[ext_resource type="PackedScene" uid="uid://dfkqlfy7e73lr" path="res://audio_player.tscn" id="3_gwcrg"]
+[ext_resource type="PackedScene" path="res://audio_player.tscn" id="3_gwcrg"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_imy1x"]
 radius = 35.1175
@@ -10,8 +10,9 @@ height = 154.365
 
 [node name="lightning" type="RigidBody2D"]
 script = ExtResource("1_tdysd")
-SPLIT_NUMBER = 6
-SCORE = 5
+SPEED = 300.0
+SPLIT_NUMBER = 0
+HITPOINTS = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-3, -2)

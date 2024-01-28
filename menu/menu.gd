@@ -1,5 +1,6 @@
 extends Control
 var save:SaveData = SaveData.new()
+@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -43,3 +44,8 @@ func _input(ev):
 func _on_confirmation_dialog_confirmed():
 	save.resetGame()
 	get_tree().change_scene_to_file("res://game.tscn")
+
+
+func _on_btn_mouse_entered() -> void:
+	audio_stream_player.play()
+

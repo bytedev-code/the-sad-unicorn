@@ -6,13 +6,15 @@
 [ext_resource type="PackedScene" uid="uid://dfkqlfy7e73lr" path="res://audio_player.tscn" id="4_ivpqn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_j5fwd"]
-radius = 28.9914
+radius = 33.3654
 
-[node name="clown_car" type="RigidBody2D"]
+[node name="clown" type="RigidBody2D"]
 script = ExtResource("1_lgd3g")
+SPEED = 80.0
 SPLIT_INTO = ExtResource("2_ijpmu")
-SPLIT_NUMBER = 4
-SCORE = 5
+SPLIT_NUMBER = 5
+SCORE = 20
+HITPOINTS = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2, -2)
@@ -21,7 +23,7 @@ scale = Vector2(2, 2)
 shape = SubResource("CircleShape2D_j5fwd")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.6, 0.6)
 texture = ExtResource("3_yjm7r")
 
 [node name="AudioPlayer" parent="." instance=ExtResource("4_ivpqn")]
