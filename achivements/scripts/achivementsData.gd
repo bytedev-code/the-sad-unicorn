@@ -11,7 +11,7 @@ var achivements = [
 	{	
 		"name": "Make the Unicorn Laugh",
 		"texture": preload("res://assets/enemies/unicorn_happy.png"), 
-		"reference":["goals","completed", "normal"], 
+		"reference":["game","completed", "default"], 
 		"goal":1, 
 		"reached": false
 	},

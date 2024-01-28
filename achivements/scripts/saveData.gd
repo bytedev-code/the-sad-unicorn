@@ -75,7 +75,7 @@ func loadGame():
 			if not value.has(key):
 				break
 			value = value[key]
-		if typeof(value) == TYPE_FLOAT and value >= achivement["goal"]:
+		if (typeof(value) == TYPE_FLOAT or typeof(value) == TYPE_INT) and not achivement["reached"] and value >= achivement["goal"]:
 			achivement["reached"] = true
 		
 	

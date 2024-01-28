@@ -16,6 +16,7 @@ font_italic = true
 font_weight = 600
 
 [node name="AchivementBanner" type="Control"]
+custom_minimum_size = Vector2(300, 50)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
