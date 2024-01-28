@@ -17,12 +17,17 @@ var mode = "default"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	get_viewport().size_changed.connect(fixBackground)
+	fixBackground()
 	_score = 0
 	for i in range(2):
 		_spawn_random_enemy()
 	
 	on_gamestart.emit(mode)
 
+func fixBackground():
+	$Background.size = get_viewport().size
+	
 func _spawn_unicorn():
 	_unicorn_spawned = true
 	var unicorn = unicorn_blueprint.instantiate()

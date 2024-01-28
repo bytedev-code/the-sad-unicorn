@@ -18,8 +18,6 @@ func _on_continue_btn_button_down():
 
 func _on_new_game_btn_button_down():
 	if save.data["game"]["started"]["total"] > 0:
-		print($ConfirmationDialog.position)
-		print($VBoxContainer.position)
 		$ConfirmationDialog.position = $VBoxContainer.position
 		$ConfirmationDialog.visible = true
 	else:

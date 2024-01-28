@@ -21,8 +21,15 @@ unicorn_blueprint = ExtResource("3_73p12")
 enemy_container = NodePath("enemies")
 BOSS_SCORE_THRESHOLD = 20
 
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("5_qvfek")
+
 [node name="Background2" type="Sprite2D" parent="."]
-position = Vector2(826, 421)
+visible = false
+position = Vector2(1116.5, 640.25)
+scale = Vector2(1.24051, 1.24756)
 texture = ExtResource("5_qvfek")
 
 [node name="player" parent="." instance=ExtResource("1_uqs0x")]
