@@ -89,7 +89,6 @@ stream = ExtResource("4_g7jrj")
 [connection signal="mouse_entered" from="VBoxContainer/options_btn" to="." method="_on_btn_mouse_entered"]
 [connection signal="button_down" from="VBoxContainer/achivements_btn" to="." method="_on_achivements_btn_button_down"]
 [connection signal="mouse_entered" from="VBoxContainer/achivements_btn" to="." method="_on_btn_mouse_entered"]
-[connection signal="mouse_entered" from="VBoxContainer/achivements_btn" to="." method="_on_achivements_btn_mouse_entered"]
 [connection signal="button_down" from="Back_btn" to="." method="_on_back_btn_button_down"]
 [connection signal="mouse_entered" from="Back_btn" to="." method="_on_btn_mouse_entered"]
 [connection signal="confirmed" from="ConfirmationDialog" to="." method="_on_confirmation_dialog_confirmed"]
