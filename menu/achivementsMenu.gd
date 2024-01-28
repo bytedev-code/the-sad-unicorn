@@ -25,7 +25,6 @@ func _input(ev):
 		get_tree().change_scene_to_file("res://menu/menu.tscn")
 		
 func _on_mouse_entered():
-	print("hover")
 	var tween = create_tween()
 	tween.tween_property($Panel, "scale:y", 1.1, .5).set_ease(Tween.EASE_OUT)
 	tween.parallel().tween_property($Panel, "scale:x", 1.1,.5).set_ease(Tween.EASE_OUT)
