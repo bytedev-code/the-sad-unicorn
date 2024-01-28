@@ -1,4 +1,4 @@
-class_name GameManager
+class_name GameManager 
 extends Node2D
 
 signal on_gamestart(mode: String)
