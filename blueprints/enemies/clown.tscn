@@ -1,10 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://wqsnkejfua8v"]
+[gd_scene load_steps=6 format=3 uid="uid://wqsnkejfua8v"]
 
 [ext_resource type="Script" path="res://enemy.gd" id="1_lgd3g"]
 [ext_resource type="PackedScene" uid="uid://2coj86mouh1l" path="res://blueprints/enemies/clown_car.tscn" id="2_ijpmu"]
-[ext_resource type="Texture2D" uid="uid://b8qo2i4twjsd4" path="res://assets/enemies/clown_300x300.png" id="3_yjm7r"]
-[ext_resource type="PackedScene" path="res://audio_player.tscn" id="4_ivpqn"]
-[ext_resource type="AudioStream" uid="uid://d1q71hx4epq0n" path="res://assets/sounds/bell.mp3" id="5_eqgjs"]
+[ext_resource type="Texture2D" uid="uid://b1normao8a54y" path="res://assets/enemies/clown_300x300.png" id="3_yjm7r"]
+[ext_resource type="PackedScene" uid="uid://dfkqlfy7e73lr" path="res://audio_player.tscn" id="4_ivpqn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_j5fwd"]
 radius = 28.9914
@@ -26,6 +25,5 @@ scale = Vector2(0.5, 0.5)
 texture = ExtResource("3_yjm7r")
 
 [node name="AudioPlayer" parent="." instance=ExtResource("4_ivpqn")]
-stream1 = ExtResource("5_eqgjs")
 
 [connection signal="body_entered" from="." to="." method="_on_collide"]

@@ -64,6 +64,11 @@ func deal_damage():
 	on_hit.emit()
 	
 	if _hp <= 0:
+		var death_particles = DeathParticles.new()
+		death_particles.position = position
+		death_particles.texture = get_node("./Sprite2D").get_texture()
+		get_tree().get_root().add_child(death_particles)
+		
 		on_score.emit(SCORE)
 		on_death.emit(SCORE, self.name)
 		

@@ -1,0 +1,11 @@
+[gd_resource type="ParticleProcessMaterial" format=3 uid="uid://o2wpoy4plcj6"]
+
+[resource]
+particle_flag_disable_z = true
+angular_velocity_min = -200.0
+angular_velocity_max = 200.0
+radial_velocity_min = 100.0
+radial_velocity_max = 200.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.05
+scale_max = 0.1

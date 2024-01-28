@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://enemy.gd" id="1_y7b4d"]
 [ext_resource type="Texture2D" uid="uid://ev0wgd63vf06" path="res://assets/enemies/slepping_cat.png" id="2_wl8y1"]
-[ext_resource type="PackedScene" path="res://audio_player.tscn" id="4_8wbhj"]
+[ext_resource type="PackedScene" uid="uid://dfkqlfy7e73lr" path="res://audio_player.tscn" id="4_8wbhj"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qgc2e"]
 radius = 46.415

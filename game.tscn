@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bbrec76wuqjut" path="res://blueprints/enemies/bee_queen.tscn" id="4_uc4ws"]
 [ext_resource type="PackedScene" uid="uid://vgh5awkhy3lq" path="res://blueprints/enemies/cookie.tscn" id="5_iliv0"]
 [ext_resource type="Texture2D" uid="uid://dlv0l7s5upemc" path="res://assets/images/background_2.png" id="5_qvfek"]
-[ext_resource type="PackedScene" path="res://blueprints/enemies/cat_woman.tscn" id="6_v2tw8"]
+[ext_resource type="PackedScene" uid="uid://dyo32b0ios53i" path="res://blueprints/enemies/cat_woman.tscn" id="6_v2tw8"]
 [ext_resource type="PackedScene" uid="uid://c78a2sdr4o365" path="res://blueprints/enemies/french_fries_bootle.tscn" id="7_w0a7w"]
 [ext_resource type="PackedScene" uid="uid://cpo57i4sn08q5" path="res://blueprints/enemies/cloud.tscn" id="8_it680"]
 [ext_resource type="PackedScene" uid="uid://wqsnkejfua8v" path="res://blueprints/enemies/clown.tscn" id="9_r8c38"]

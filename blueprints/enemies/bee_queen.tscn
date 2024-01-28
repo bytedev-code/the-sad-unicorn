@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://enemy.gd" id="1_e2ucn"]
 [ext_resource type="PackedScene" uid="uid://c67uguh53333i" path="res://blueprints/enemies/honey.tscn" id="2_ah7fu"]
 [ext_resource type="Texture2D" uid="uid://beax6bqsqx4ow" path="res://assets/enemies/bee_queen.png" id="3_ejsan"]
-[ext_resource type="PackedScene" path="res://audio_player.tscn" id="4_w4mdp"]
+[ext_resource type="PackedScene" uid="uid://dfkqlfy7e73lr" path="res://audio_player.tscn" id="4_w4mdp"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pm8kl"]
 radius = 19.5

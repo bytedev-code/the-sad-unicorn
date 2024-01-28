@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://d4gvvlgi56vto"]
+
+[ext_resource type="Texture2D" uid="uid://dhi4rtdbmtggy" path="res://assets/enemies/banana.png" id="1_soikk"]
+[ext_resource type="Script" path="res://DeathParticles.gd" id="2_ujplb"]
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_odshh"]
+particle_flag_disable_z = true
+angular_velocity_min = -200.0
+angular_velocity_max = 200.0
+radial_velocity_min = 100.0
+radial_velocity_max = 200.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.05
+scale_max = 0.1
+
+[node name="GPUParticles2D" type="GPUParticles2D"]
+emitting = false
+amount = 50
+process_material = SubResource("ParticleProcessMaterial_odshh")
+texture = ExtResource("1_soikk")
+script = ExtResource("2_ujplb")
