@@ -53,7 +53,7 @@ func _process(delta):
 
 func _physics_process(delta):
 	
-	velocity *= 0.99
+	velocity *= 0.97
 
 	if not _apply_impulse:
 		if Input.is_action_pressed("player_forward"):
