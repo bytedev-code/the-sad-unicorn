@@ -13,9 +13,9 @@ height = 414.502
 script = ExtResource("1_t3y76")
 DEATH_TEXTURE = ExtResource("2_knjnp")
 ROTATE = false
-SPEED = 400.0
+SPEED = 300.0
 SCORE = 100
-HITPOINTS = 2
+HITPOINTS = 10
 MOVE_AI = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
