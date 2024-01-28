@@ -20,11 +20,6 @@ config/icon="res://icon.svg"
 Globals="*res://globals.gd"
 AudioManager="*res://AudioManager.tscn"
 
-[display]
-
-window/size/viewport_width=1600
-window/size/viewport_height=800
-
 [input]
 
 player_forward={

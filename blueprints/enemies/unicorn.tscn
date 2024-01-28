@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://boss.gd" id="1_t3y76"]
 [ext_resource type="Texture2D" uid="uid://b0hr1nsxp1gok" path="res://assets/enemies/unicorn_sad.png" id="2_ac4ov"]
 [ext_resource type="Texture2D" uid="uid://dmdnw8qysi41x" path="res://assets/enemies/unicorn_happy.png" id="2_knjnp"]
-[ext_resource type="PackedScene" path="res://audio_player.tscn" id="3_sxjqp"]
+[ext_resource type="PackedScene" uid="uid://dfkqlfy7e73lr" path="res://audio_player.tscn" id="3_sxjqp"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tyi1p"]
 radius = 99.8697

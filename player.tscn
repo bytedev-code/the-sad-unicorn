@@ -9,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://4q36u5uxlxli" path="res://assets/sounds/blob1.mp3" id="5_rgvhl"]
 [ext_resource type="AudioStream" uid="uid://cneu8slirlh7s" path="res://assets/sounds/knack.mp3" id="6_guwb6"]
 [ext_resource type="AudioStream" uid="uid://br5a0106gsyxb" path="res://assets/sounds/screws.mp3" id="6_r4nvf"]
+[ext_resource type="Script" path="res://DamageIndicator.gd" id="3_ndvl3"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aj5bb"]
 radius = 56.0
@@ -44,3 +45,8 @@ death_stream3 = ExtResource("6_r4nvf")
 shoot_stream1 = ExtResource("4_00q8g")
 shoot_stream2 = ExtResource("5_rgvhl")
 shoot_stream3 = ExtResource("6_guwb6")
+[node name="DamageIndicator" type="Node" parent="."]
+script = ExtResource("3_ndvl3")
+SPRITE = NodePath("../Sprite2D")
+
+[connection signal="on_hit" from="." to="DamageIndicator" method="on_hit_slot"]
