@@ -5,20 +5,22 @@
 [ext_resource type="PackedScene" path="res://audio_player.tscn" id="3_kp2ba"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_chy0a"]
-size = Vector2(138.2, 104.799)
+size = Vector2(96.2639, 65.9868)
 
 [node name="chocolate" type="RigidBody2D"]
 script = ExtResource("1_ku8ro")
-SPLIT_NUMBER = 6
-SCORE = 5
+SPEED = 40.0
+SPLIT_NUMBER = 0
+SCORE = 4
+HITPOINTS = 12
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(3.5, 5.5)
+position = Vector2(0.499998, -2)
 rotation = 2.38759
 shape = SubResource("RectangleShape2D_chy0a")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.2, 0.2)
+scale = Vector2(0.15, 0.15)
 texture = ExtResource("2_0e3sa")
 
 [node name="AudioPlayer" parent="." instance=ExtResource("3_kp2ba")]

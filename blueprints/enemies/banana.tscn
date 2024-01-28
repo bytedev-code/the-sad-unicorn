@@ -5,19 +5,24 @@
 [ext_resource type="PackedScene" path="res://audio_player.tscn" id="4_yqvl4"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pm8kl"]
-radius = 44.6178
-height = 223.406
+radius = 12.7792
+height = 46.9429
 
 [node name="banana" type="RigidBody2D"]
 script = ExtResource("1_pvyua")
+SPEED = 300.0
+SPLIT_NUMBER = 0
+SCORE = 80
+HITPOINTS = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(27, 6)
-rotation = 0.583312
+position = Vector2(4, 15)
+rotation = 0.83101
 shape = SubResource("CapsuleShape2D_pm8kl")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.25, 0.25)
+position = Vector2(1, 0)
+scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_467fq")
 
 [node name="AudioPlayer" parent="." instance=ExtResource("4_yqvl4")]
