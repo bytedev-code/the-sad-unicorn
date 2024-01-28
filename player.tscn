@@ -1,7 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://yaolwrsv7rof"]
+[gd_scene load_steps=8 format=3 uid="uid://yaolwrsv7rof"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_ulpd7"]
 [ext_resource type="Texture2D" uid="uid://c6ih7oetcwv4b" path="res://assets/enemies/walrus_1.png" id="2_xtfns"]
+[ext_resource type="PackedScene" uid="uid://dfkqlfy7e73lr" path="res://audio_player.tscn" id="3_wykea"]
+[ext_resource type="AudioStream" uid="uid://d1q71hx4epq0n" path="res://assets/sounds/bell.mp3" id="4_00q8g"]
+[ext_resource type="AudioStream" uid="uid://4q36u5uxlxli" path="res://assets/sounds/blob1.mp3" id="5_rgvhl"]
+[ext_resource type="AudioStream" uid="uid://cneu8slirlh7s" path="res://assets/sounds/knack.mp3" id="6_guwb6"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aj5bb"]
 radius = 56.0
@@ -29,3 +33,8 @@ one_shot = true
 [node name="ShootCooldown" type="Timer" parent="."]
 wait_time = 0.5
 one_shot = true
+
+[node name="AudioPlayer" parent="." instance=ExtResource("3_wykea")]
+shoot_stream1 = ExtResource("4_00q8g")
+shoot_stream2 = ExtResource("5_rgvhl")
+shoot_stream3 = ExtResource("6_guwb6")
