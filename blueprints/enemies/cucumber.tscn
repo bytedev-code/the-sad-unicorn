@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://dvc3nvxt7k6tc"]
+
+[ext_resource type="Script" path="res://enemy.gd" id="1_e74ps"]
+[ext_resource type="Texture2D" uid="uid://box775bju0akj" path="res://assets/enemies/cucumber.png" id="2_0ubfs"]
+[ext_resource type="PackedScene" path="res://audio_player.tscn" id="3_vt0hn"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a5nan"]
+radius = 41.7211
+height = 249.969
+
+[node name="cucumber" type="RigidBody2D"]
+script = ExtResource("1_e74ps")
+SPEED = 150.0
+SPLIT_NUMBER = 0
+HITPOINTS = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, -3)
+rotation = -2.35341
+shape = SubResource("CapsuleShape2D_a5nan")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_0ubfs")
+
+[node name="AudioPlayer" parent="." instance=ExtResource("3_vt0hn")]
+
+[connection signal="body_entered" from="." to="." method="_on_collide"]

@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://bq8ygufspp2ct"]
+
+[ext_resource type="Script" path="res://enemy.gd" id="1_6qu4q"]
+[ext_resource type="Texture2D" uid="uid://b83sr7ip6gbhp" path="res://assets/enemies/cake.png" id="2_0k8mh"]
+[ext_resource type="PackedScene" path="res://audio_player.tscn" id="3_a303u"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7lf1m"]
+size = Vector2(219.778, 319.153)
+
+[node name="cake" type="RigidBody2D"]
+script = ExtResource("1_6qu4q")
+SPEED = 50.0
+SPLIT_NUMBER = 0
+SCORE = 20
+HITPOINTS = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-9, 6.50001)
+rotation = -3.1409
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_7lf1m")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_0k8mh")
+
+[node name="AudioPlayer" parent="." instance=ExtResource("3_a303u")]
+
+[connection signal="body_entered" from="." to="." method="_on_collide"]

@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://ugcn3ipu4as2"]
+
+[ext_resource type="Script" path="res://enemy.gd" id="1_0btw6"]
+[ext_resource type="Texture2D" uid="uid://dvucdd1col7op" path="res://assets/enemies/sheep.png" id="2_5m3bo"]
+[ext_resource type="PackedScene" path="res://audio_player.tscn" id="3_aih7o"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a5nan"]
+radius = 81.0251
+height = 183.972
+
+[node name="sheep" type="RigidBody2D"]
+script = ExtResource("1_0btw6")
+SPEED = 150.0
+SPLIT_NUMBER = 0
+HITPOINTS = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, -3)
+rotation = 1.56119
+shape = SubResource("CapsuleShape2D_a5nan")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_5m3bo")
+
+[node name="AudioPlayer" parent="." instance=ExtResource("3_aih7o")]
+
+[connection signal="body_entered" from="." to="." method="_on_collide"]

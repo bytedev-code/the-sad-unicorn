@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://bb8sxw104db0r"]
+
+[ext_resource type="Script" path="res://enemy.gd" id="1_rj37q"]
+[ext_resource type="PackedScene" uid="uid://5fytbqaaxn0t" path="res://blueprints/enemies/leg.tscn" id="2_go5me"]
+[ext_resource type="Texture2D" uid="uid://bt1wjs74lj8s0" path="res://assets/enemies/squirrel_300x300.png" id="3_gnetm"]
+[ext_resource type="PackedScene" path="res://audio_player.tscn" id="4_ufbj1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_skiqu"]
+radius = 6.80073
+
+[node name="squirrel" type="RigidBody2D"]
+script = ExtResource("1_rj37q")
+SPEED = 80.0
+SPLIT_INTO = ExtResource("2_go5me")
+SPLIT_NUMBER = 2
+HITPOINTS = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+rotation = -2.24985
+scale = Vector2(2, 2)
+shape = SubResource("CircleShape2D_skiqu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("3_gnetm")
+
+[node name="AudioPlayer" parent="." instance=ExtResource("4_ufbj1")]
+
+[connection signal="body_entered" from="." to="." method="_on_collide"]

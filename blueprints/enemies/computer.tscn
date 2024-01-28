@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://d06c7mc1rh4ib"]
+
+[ext_resource type="Script" path="res://enemy.gd" id="1_7ciie"]
+[ext_resource type="PackedScene" uid="uid://cw7ocsuuy1mwy" path="res://blueprints/enemies/mouse.tscn" id="2_jbk6i"]
+[ext_resource type="Texture2D" uid="uid://jtqxcl033sog" path="res://assets/enemies/computer.png" id="3_jlgv8"]
+[ext_resource type="PackedScene" path="res://audio_player.tscn" id="4_hhbx8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4swvt"]
+size = Vector2(211.526, 185.444)
+
+[node name="computer" type="RigidBody2D"]
+script = ExtResource("1_7ciie")
+SPEED = 101.0
+SPLIT_INTO = ExtResource("2_jbk6i")
+SPLIT_NUMBER = 4
+SCORE = 101
+HITPOINTS = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-27.3389, 7.41415)
+rotation = 0.0174533
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_4swvt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-12, 0)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_jlgv8")
+
+[node name="AudioPlayer" parent="." instance=ExtResource("4_hhbx8")]
+
+[connection signal="body_entered" from="." to="." method="_on_collide"]

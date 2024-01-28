@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://dl85jm6h0afs1"]
+
+[ext_resource type="Script" path="res://enemy.gd" id="1_o2cdx"]
+[ext_resource type="Texture2D" uid="uid://8fwd1wxc3mc7" path="res://assets/enemies/paperclip.png" id="2_mqra6"]
+[ext_resource type="PackedScene" path="res://audio_player.tscn" id="3_icrj6"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_m0dhc"]
+radius = 23.9911
+height = 122.048
+
+[node name="leg" type="RigidBody2D"]
+script = ExtResource("1_o2cdx")
+SPEED = 120.0
+SPLIT_NUMBER = 0
+SCORE = 15
+HITPOINTS = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 3.12601
+shape = SubResource("CapsuleShape2D_m0dhc")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_mqra6")
+
+[node name="AudioPlayer" parent="." instance=ExtResource("3_icrj6")]
+
+[connection signal="body_entered" from="." to="." method="_on_collide"]

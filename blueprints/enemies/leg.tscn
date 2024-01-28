@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://5fytbqaaxn0t"]
+
+[ext_resource type="Script" path="res://enemy.gd" id="1_utpwe"]
+[ext_resource type="Texture2D" uid="uid://c7c8k8udjmemn" path="res://assets/enemies/leg.png" id="2_4nr7b"]
+[ext_resource type="PackedScene" path="res://audio_player.tscn" id="3_uv6eh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_psesa"]
+size = Vector2(131.448, 46.5983)
+
+[node name="leg" type="RigidBody2D"]
+script = ExtResource("1_utpwe")
+SPEED = 200.0
+SPLIT_NUMBER = 0
+SCORE = 2
+HITPOINTS = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-7.27447, 2.22498)
+rotation = 1.54361
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_psesa")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_4nr7b")
+
+[node name="AudioPlayer" parent="." instance=ExtResource("3_uv6eh")]
+
+[connection signal="body_entered" from="." to="." method="_on_collide"]

@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://cv7utevf1v5ni"]
+
+[ext_resource type="Script" path="res://enemy.gd" id="1_oewpj"]
+[ext_resource type="PackedScene" uid="uid://5fytbqaaxn0t" path="res://blueprints/enemies/leg.tscn" id="2_af5te"]
+[ext_resource type="Texture2D" uid="uid://bpooqjrwxyg5j" path="res://assets/enemies/gorilla.png" id="3_0o4uu"]
+[ext_resource type="PackedScene" path="res://audio_player.tscn" id="4_21h4t"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pxqkw"]
+radius = 80.6859
+height = 235.999
+
+[node name="gorilla" type="RigidBody2D"]
+script = ExtResource("1_oewpj")
+SPEED = 80.0
+SPLIT_INTO = ExtResource("2_af5te")
+SPLIT_NUMBER = 2
+HITPOINTS = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4, 16)
+rotation = 0.0174533
+scale = Vector2(2, 2)
+shape = SubResource("CapsuleShape2D_pxqkw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-12, 0)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("3_0o4uu")
+
+[node name="AudioPlayer" parent="." instance=ExtResource("4_21h4t")]
+
+[connection signal="body_entered" from="." to="." method="_on_collide"]

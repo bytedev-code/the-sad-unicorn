@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://vk07l4esuvrc"]
+
+[ext_resource type="Script" path="res://enemy.gd" id="1_0w0tc"]
+[ext_resource type="PackedScene" uid="uid://b1aiafdjt0e1y" path="res://blueprints/enemies/cake.tscn" id="2_3n7yy"]
+[ext_resource type="Texture2D" uid="uid://b3ewn5xs5hogc" path="res://assets/enemies/gummy_bear.png" id="3_8u131"]
+[ext_resource type="PackedScene" path="res://audio_player.tscn" id="4_q7ccs"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pxqkw"]
+radius = 37.4943
+height = 114.913
+
+[node name="gummy_bear" type="RigidBody2D"]
+script = ExtResource("1_0w0tc")
+SPEED = 180.0
+SPLIT_INTO = ExtResource("2_3n7yy")
+SPLIT_NUMBER = 2
+SCORE = 20
+HITPOINTS = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 0.0762196
+scale = Vector2(2, 2)
+shape = SubResource("CapsuleShape2D_pxqkw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-12, 0)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_8u131")
+
+[node name="AudioPlayer" parent="." instance=ExtResource("4_q7ccs")]
+
+[connection signal="body_entered" from="." to="." method="_on_collide"]
