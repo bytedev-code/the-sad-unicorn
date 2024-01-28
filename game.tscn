@@ -47,6 +47,7 @@ volume_db = -20.0
 autoplay = true
 
 [connection signal="on_gamelost" from="." to="CanvasLayer/Hud" method="gameLost"]
+[connection signal="on_gamestart" from="." to="CanvasLayer/Hud" method="gamestared"]
 [connection signal="on_gamewon" from="." to="CanvasLayer/Hud" method="gameWon"]
 [connection signal="on_score_changed" from="." to="CanvasLayer/Hud" method="enemyDeath"]
 [connection signal="on_damage" from="player" to="CanvasLayer/Hud" method="damageTaken"]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://dvwm45vvvy6yi"]
 
-[ext_resource type="Script" path="res://menu.gd" id="1_0ks8r"]
-[ext_resource type="Theme" uid="uid://b2ommva15a5fy" path="res://menu.tres" id="1_2rghk"]
+[ext_resource type="Script" path="res://menu/menuO.gd" id="1_0ks8r"]
+[ext_resource type="Theme" uid="uid://b2ommva15a5fy" path="res://menu/menu.tres" id="1_2rghk"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hrvpx"]
 bg_color = Color(0.6, 0.631373, 0.298039, 1)
@@ -191,6 +191,11 @@ tooltip_text = "Close window"
 theme = ExtResource("1_2rghk")
 theme_override_styles/normal = SubResource("StyleBoxFlat_xex3m")
 text = "Close"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Buttons/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Buttons/HowToButton" to="." method="_on_how_to_button_pressed"]

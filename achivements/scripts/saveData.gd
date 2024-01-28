@@ -15,6 +15,10 @@ var template = {
 		}
 	},
 	"game": {
+		"started":{
+			"total":0,
+			"default":0,
+		},
 		"completed": {
 			"total":0,
 			"default":0,
@@ -29,6 +33,7 @@ var template = {
 }
 
 func _init():
+	#resetGame()
 	loadGame()
 
 

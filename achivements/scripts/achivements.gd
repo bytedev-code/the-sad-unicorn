@@ -5,6 +5,16 @@ var achivementBanner = preload("res://achivements/achivementBanner.tscn")
 
 func resetSave():
 	save.resetGame()
+	
+func gameStared(mode: String):
+	if(save.data["game"]["started"].has(mode)):
+		save.data["game"]["started"][mode] += 1
+	else:
+		save.data["game"]["started"][mode] = 1
+	save.data["game"]["started"]["total"] += 1
+	checkforAchivement()
+	save.saveGame()
+	
 func gameWon(mode: String)	:
 	if(save.data["game"]["completed"].has(mode)):
 		save.data["game"]["completed"][mode] += 1

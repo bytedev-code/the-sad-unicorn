@@ -12,6 +12,9 @@ func damageTaken(health:int, enemy:String):
 	
 func setHealth(health:int):
 	$health.setHealth(health)
+
+func gamestared(mode:String):
+	$Achivements.gameStared(mode)
 	
 func addScore(score:int):
 	$Score.addScore(score)

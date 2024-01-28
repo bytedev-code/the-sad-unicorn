@@ -1,0 +1,79 @@
+[gd_scene load_steps=4 format=3 uid="uid://dqefgcd2fjaot"]
+
+[ext_resource type="Script" path="res://menu/menu.gd" id="1_0ks8r"]
+[ext_resource type="Theme" uid="uid://bcltmjdk0dva" path="res://menu/button_theme.tres" id="2_5sh5j"]
+[ext_resource type="Texture2D" uid="uid://c8ys1jdvespkk" path="res://assets/images/splash_screen.png" id="2_d0xqj"]
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0ks8r")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_d0xqj")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -187.5
+offset_top = -550.0
+offset_right = 187.5
+offset_bottom = -104.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 18
+
+[node name="continue_btn" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_5sh5j")
+disabled = true
+text = "Conintue"
+
+[node name="newGame_btn" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_5sh5j")
+text = "New Game"
+
+[node name="options_btn" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_5sh5j")
+text = "Options"
+
+[node name="achivements_btn" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_5sh5j")
+text = "Achivements"
+
+[node name="Back_btn" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -100.0
+offset_top = 25.0
+offset_right = -40.0
+offset_bottom = 125.0
+grow_horizontal = 0
+theme = ExtResource("2_5sh5j")
+text = "X"
+
+[connection signal="button_down" from="VBoxContainer/continue_btn" to="." method="_on_continue_btn_button_down"]
+[connection signal="button_down" from="VBoxContainer/newGame_btn" to="." method="_on_new_game_btn_button_down"]
+[connection signal="button_down" from="VBoxContainer/options_btn" to="." method="_on_options_btn_button_down"]
+[connection signal="button_down" from="VBoxContainer/achivements_btn" to="." method="_on_achivements_btn_button_down"]
+[connection signal="button_down" from="Back_btn" to="." method="_on_back_btn_button_down"]

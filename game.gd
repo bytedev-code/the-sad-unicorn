@@ -21,7 +21,7 @@ func _ready():
 	for i in range(2):
 		_spawn_random_enemy()
 	
-	on_gamestart.emit()
+	on_gamestart.emit(mode)
 
 func _spawn_unicorn():
 	_unicorn_spawned = true
