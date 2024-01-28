@@ -2,15 +2,15 @@
 
 [ext_resource type="Script" path="res://enemy.gd" id="1_fc5na"]
 [ext_resource type="Texture2D" uid="uid://cqve0sqg78ut4" path="res://assets/enemies/clown_shoe.png" id="2_ifev1"]
-[ext_resource type="PackedScene" path="res://audio_player.tscn" id="3_n6o2a"]
+[ext_resource type="PackedScene" uid="uid://dfkqlfy7e73lr" path="res://audio_player.tscn" id="3_n6o2a"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_0o66s"]
-radius = 22.8175
-height = 62.6386
+radius = 48.1051
+height = 138.645
 
 [node name="clown_shoe" type="RigidBody2D"]
 script = ExtResource("1_fc5na")
-SPLIT_NUMBER = 0
+SPLIT_NUMBER = 6
 SCORE = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -19,7 +19,7 @@ rotation = 1.24303
 shape = SubResource("CapsuleShape2D_0o66s")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.1, 0.1)
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("2_ifev1")
 
 [node name="AudioPlayer" parent="." instance=ExtResource("3_n6o2a")]

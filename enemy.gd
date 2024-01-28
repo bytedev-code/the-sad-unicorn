@@ -8,7 +8,7 @@ signal on_collide()
 signal on_hit()
 signal on_shoot()
 
-enum MoveType {RANDOM, HORIZONTAL}
+enum MoveAI {RANDOM, TARGETPOINT, FOLLOW}
 
 @export var ROTATE: bool = true
 @export var SPEED: float = 100.
@@ -18,15 +18,14 @@ enum MoveType {RANDOM, HORIZONTAL}
 @export var IGNORE_PLAYER_HIT: bool = false
 @export var HITPOINTS: int = 5
 @export var ENEMY_PROJECTILE: PackedScene = null
-@export var MOVETYPE: MoveType = MoveType.RANDOM
+@export var MOVE_AI: MoveAI = MoveAI.RANDOM
 
-var _direction = Vector2(0, 0)
 var _rot_speed = 0.1
 var _hp = 5
 
 var rng = RandomNumberGenerator.new()
 var dmg_indicator = DamageIndicator.new()
-var movement_ai = null
+var movement_ai: MovementAI = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -34,9 +33,14 @@ func _ready():
 	on_hit.connect(dmg_indicator.on_hit_slot)
 	add_child(dmg_indicator)
 	
-	movement_ai = TargetPointAI.new(self, SPEED)
+	match MOVE_AI:
+		MoveAI.TARGETPOINT:
+			movement_ai = TargetPointAI.new(self, SPEED)
+		MoveAI.FOLLOW:
+			movement_ai = FollowPlayerAI.new(self, SPEED)
+		_:
+			movement_ai = RandomDirectionAI.new(self, SPEED)
 	add_child(movement_ai)
-	movement_ai._plan_target_location()
 
 	_rot_speed = rng.randf_range(-0.1, 0.1)
 	_hp = HITPOINTS
@@ -76,9 +80,11 @@ func deal_damage():
 func _on_collide(node: Node):
 	if node is Player:
 		var player_dir = node.get_direction()
-		_direction = player_dir
+		if movement_ai is RandomDirectionAI:
+			movement_ai.set_direction(player_dir)
 		on_collide.emit()
 		
-	if node is Enemy:
-		_direction = -_direction
+	if node is Enemy:	
+		if movement_ai is RandomDirectionAI:
+			movement_ai.set_direction(-movement_ai._direction)
 		on_collide.emit()

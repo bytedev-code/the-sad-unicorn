@@ -11,6 +11,7 @@ height = 80.7913
 
 [node name="bee_queen" type="RigidBody2D"]
 script = ExtResource("1_e2ucn")
+SPEED = 300.0
 SPLIT_INTO = ExtResource("2_ah7fu")
 SPLIT_NUMBER = 6
 SCORE = 5

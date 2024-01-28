@@ -13,6 +13,7 @@ script = ExtResource("1_lgd3g")
 SPLIT_INTO = ExtResource("2_ijpmu")
 SPLIT_NUMBER = 4
 SCORE = 5
+MOVE_AI = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2, -2)
