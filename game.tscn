@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bn04dsdp1jpme"]
+[gd_scene load_steps=22 format=3 uid="uid://bn04dsdp1jpme"]
 
 [ext_resource type="Script" path="res://game.gd" id="1_i82ie"]
 [ext_resource type="PackedScene" uid="uid://yaolwrsv7rof" path="res://player.tscn" id="1_uqs0x"]
@@ -8,19 +8,26 @@
 [ext_resource type="PackedScene" uid="uid://bvut3uk1ruoiu" path="res://ui/hud.tscn" id="4_a746c"]
 [ext_resource type="PackedScene" uid="uid://bbrec76wuqjut" path="res://blueprints/enemies/bee_queen.tscn" id="4_uc4ws"]
 [ext_resource type="PackedScene" uid="uid://vgh5awkhy3lq" path="res://blueprints/enemies/cookie.tscn" id="5_iliv0"]
-[ext_resource type="Texture2D" uid="uid://yvc7l4nmdc1c" path="res://assets/images/background_2.png" id="5_qvfek"]
+[ext_resource type="Texture2D" uid="uid://dlv0l7s5upemc" path="res://assets/images/background_2.png" id="5_qvfek"]
 [ext_resource type="PackedScene" uid="uid://dyo32b0ios53i" path="res://blueprints/enemies/cat_woman.tscn" id="6_v2tw8"]
 [ext_resource type="PackedScene" uid="uid://c78a2sdr4o365" path="res://blueprints/enemies/french_fries_bootle.tscn" id="7_w0a7w"]
 [ext_resource type="PackedScene" uid="uid://cpo57i4sn08q5" path="res://blueprints/enemies/cloud.tscn" id="8_it680"]
 [ext_resource type="PackedScene" uid="uid://wqsnkejfua8v" path="res://blueprints/enemies/clown.tscn" id="9_r8c38"]
+[ext_resource type="PackedScene" path="res://blueprints/enemies/computer.tscn" id="11_5yo4j"]
+[ext_resource type="PackedScene" path="res://blueprints/enemies/gorilla.tscn" id="12_fblo5"]
+[ext_resource type="PackedScene" path="res://blueprints/enemies/hotdog.tscn" id="13_gs46d"]
+[ext_resource type="PackedScene" path="res://blueprints/enemies/doener.tscn" id="14_eavio"]
 [ext_resource type="Script" path="res://EnemyGenerator.gd" id="14_vdsek"]
+[ext_resource type="PackedScene" path="res://blueprints/enemies/gummy_bear.tscn" id="15_ygx7l"]
+[ext_resource type="PackedScene" path="res://blueprints/enemies/squirrel.tscn" id="16_rl04l"]
+[ext_resource type="PackedScene" path="res://blueprints/enemies/green_burger.tscn" id="17_e16xy"]
 
 [node name="game" type="Node2D"]
 script = ExtResource("1_i82ie")
 
 [node name="EnemyGenerator" type="Node" parent="."]
 script = ExtResource("14_vdsek")
-ENEMY_BLUEPRINTS = Array[PackedScene]([ExtResource("3_q5dd1"), ExtResource("3_lnoqa"), ExtResource("4_uc4ws"), ExtResource("5_iliv0"), ExtResource("6_v2tw8"), ExtResource("7_w0a7w"), ExtResource("8_it680"), ExtResource("9_r8c38")])
+ENEMY_BLUEPRINTS = Array[PackedScene]([ExtResource("3_q5dd1"), ExtResource("3_lnoqa"), ExtResource("4_uc4ws"), ExtResource("5_iliv0"), ExtResource("6_v2tw8"), ExtResource("7_w0a7w"), ExtResource("8_it680"), ExtResource("9_r8c38"), ExtResource("11_5yo4j"), ExtResource("12_fblo5"), ExtResource("13_gs46d"), ExtResource("14_eavio"), ExtResource("15_ygx7l"), ExtResource("16_rl04l"), ExtResource("17_e16xy")])
 UNICORN_BLUEPRINT = ExtResource("3_73p12")
 ENEMY_CONTAINER = NodePath("../enemies")
 INITIAL_ENEMIES = 4
