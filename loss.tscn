@@ -35,9 +35,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_lve7o")
 
-[node name="Achivements" parent="." instance=ExtResource("2_ma8sy")]
-layout_mode = 1
-
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -61,6 +58,9 @@ rotation = 0.261799
 pivot_offset = Vector2(250, 240)
 texture = ExtResource("1_21h38")
 expand_mode = 1
+
+[node name="Achivements" parent="." instance=ExtResource("2_ma8sy")]
+layout_mode = 1
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 1

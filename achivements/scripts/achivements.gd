@@ -117,3 +117,13 @@ func displayAchivment(achivment):
 	$BannerContainer.position.y = -50
 	tween.tween_property($BannerContainer, "position:y", 4, 0.5).set_ease(Tween.EASE_OUT)
 
+func _input(ev):
+	if Input.is_key_pressed(KEY_K):
+		displayAchivment(
+	{
+		"name": "Beez Nutz", 
+		"texture": preload("res://assets/enemies/bee_queen.png"), 
+		"reference":["enemies","killed","bee_queen"], 
+		"goal":10, 
+		"reached": false
+	})

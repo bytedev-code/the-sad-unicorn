@@ -35,9 +35,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ojjr4")
 
-[node name="Achivements" parent="." instance=ExtResource("2_5iluo")]
-layout_mode = 1
-
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -61,6 +58,9 @@ rotation = 0.261799
 pivot_offset = Vector2(250, 240)
 texture = ExtResource("3_gyke1")
 expand_mode = 1
+
+[node name="Achivements" parent="." instance=ExtResource("2_5iluo")]
+layout_mode = 1
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 1
@@ -112,6 +112,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_7fson")
 text = "Again!!!"
 
 [node name="Button2" type="Button" parent="Control"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
