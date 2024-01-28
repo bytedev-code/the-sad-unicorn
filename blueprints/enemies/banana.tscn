@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://enemy.gd" id="1_pvyua"]
 [ext_resource type="Texture2D" uid="uid://dhi4rtdbmtggy" path="res://assets/enemies/banana.png" id="2_467fq"]
-[ext_resource type="PackedScene" path="res://audio_player.tscn" id="4_yqvl4"]
+[ext_resource type="PackedScene" uid="uid://dfkqlfy7e73lr" path="res://audio_player.tscn" id="4_yqvl4"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pm8kl"]
 radius = 44.6178

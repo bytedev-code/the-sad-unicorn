@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://yaolwrsv7rof"]
+[gd_scene load_steps=5 format=3 uid="uid://yaolwrsv7rof"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_ulpd7"]
 [ext_resource type="Texture2D" uid="uid://c6ih7oetcwv4b" path="res://assets/enemies/walrus_1.png" id="2_xtfns"]
+[ext_resource type="Script" path="res://DamageIndicator.gd" id="3_ndvl3"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_aj5bb"]
 radius = 56.0
@@ -29,3 +30,9 @@ one_shot = true
 [node name="ShootCooldown" type="Timer" parent="."]
 wait_time = 0.5
 one_shot = true
+
+[node name="DamageIndicator" type="Node" parent="."]
+script = ExtResource("3_ndvl3")
+SPRITE = NodePath("../Sprite2D")
+
+[connection signal="on_hit" from="." to="DamageIndicator" method="on_hit_slot"]

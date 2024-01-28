@@ -24,9 +24,13 @@ var _rot_speed = 0.1
 var _hp = 5
 
 var rng = RandomNumberGenerator.new()
+var dmg_indicator = DamageIndicator.new()
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	dmg_indicator.SPRITE = "../Sprite2D"
+	on_hit.connect(dmg_indicator.on_hit_slot)
+	add_child(dmg_indicator)
 	
 	if MOVETYPE == MoveType.RANDOM:
 		_direction = Vector2.from_angle(rng.randf() * 2 * PI)

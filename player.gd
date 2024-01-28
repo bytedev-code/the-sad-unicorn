@@ -2,6 +2,7 @@ class_name Player
 extends CharacterBody2D
 
 signal on_damage(hp: int, enemy: String)
+signal on_hit()
 signal on_shoot()
 signal on_lost(enemy: String)
 
@@ -82,7 +83,6 @@ func _physics_process(delta):
 			
 
 func add_impulse(impulse: Vector2):
-	print("IMPULSE")
 	_impulse = impulse
 	_apply_impulse = true
 
@@ -91,6 +91,7 @@ func deal_damage(enemy):
 	_is_invincible = true
 	InvincibleTimer.start()
 	
+	on_hit.emit()
 	on_damage.emit(_hp, enemy.name)
 	
 	if _hp <= 0:
