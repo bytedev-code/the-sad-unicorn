@@ -19,6 +19,8 @@ func _ready() -> void:
 	enemy_or_player = get_parent()
 	if enemy_or_player is Enemy:
 		enemy_or_player.on_death.connect(_on_death)
+	else:
+		enemy_or_player.on_lost.connect(_on_lost)
 	enemy_or_player.on_shoot.connect(_on_shoot)
 	enemy_audio_stream_player = get_tree().get_first_node_in_group("enemy_audio_stream_player")
 	if death_stream1 is AudioStream:
@@ -40,7 +42,13 @@ func _ready() -> void:
 	if shoot_stream3 is AudioStream:
 		shoot_streams.append(shoot_stream3)
 	randomize()
- 
+
+func _on_lost(_enemy) -> void:
+	print("on lost")
+	if death_streams.size() > 0:
+		enemy_audio_stream_player.stream = death_streams[randi() % death_streams.size()]
+		enemy_audio_stream_player.play()
+	
 func _on_death(_score, _enemy) -> void:
 	if death_streams.size() > 0:
 		enemy_audio_stream_player.stream = death_streams[randi() % death_streams.size()]
