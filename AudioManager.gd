@@ -6,4 +6,4 @@ func _ready():
 
 func setVolume():
 	save.loadGame()
-	$BackgroundAudioStreamPlayer.volume_db = save.settings["volume"] - 50
+	$BackgroundAudioStreamPlayer.volume_db = save.settings["volume"] - 80
