@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://game.gd" id="1_i82ie"]
 [ext_resource type="PackedScene" uid="uid://yaolwrsv7rof" path="res://player.tscn" id="1_uqs0x"]
 [ext_resource type="PackedScene" uid="uid://c7pp2emx7mukt" path="res://blueprints/enemies/unicorn.tscn" id="3_73p12"]
-[ext_resource type="PackedScene" uid="uid://yarp424i02k2" path="res://blueprints/enemies/monkey.tscn" id="3_lnoqa"]
+[ext_resource type="PackedScene" path="res://blueprints/enemies/monkey.tscn" id="3_lnoqa"]
 [ext_resource type="PackedScene" uid="uid://dirmfbrgs5jhn" path="res://blueprints/enemies/pizza.tscn" id="3_q5dd1"]
 [ext_resource type="PackedScene" uid="uid://bvut3uk1ruoiu" path="res://ui/hud.tscn" id="4_a746c"]
 [ext_resource type="PackedScene" uid="uid://bbrec76wuqjut" path="res://blueprints/enemies/bee_queen.tscn" id="4_uc4ws"]
